@@ -83,7 +83,6 @@ export const DuelPanel: React.FC = () => {
   } = useGame();
 
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [timerStarted, setTimerStarted] = useState(false); // Track if timer was ever started this round
   const [showAnswer, setShowAnswer] = useState(false);
   const [editTeamAScore, setEditTeamAScore] = useState('');
   const [editTeamBScore, setEditTeamBScore] = useState('');
@@ -95,6 +94,7 @@ export const DuelPanel: React.FC = () => {
   const [announcedMatches, setAnnouncedMatches] = useState<Set<string>>(new Set());
   const [lastCompletedMatch, setLastCompletedMatch] = useState<{ name: string; matchType: string; scoreA: number; scoreB: number } | null>(null);
   const [showTournamentEnd, setShowTournamentEnd] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   // Track selected answers for each team
   const [teamAAnswer, setTeamAAnswer] = useState<AnswerResult>(null);
@@ -205,9 +205,8 @@ export const DuelPanel: React.FC = () => {
       setShowWinnerCelebration(true);
       playSfx('win');
       
-      // Fire confetti from winner's side
-      const confettiSide = side === 'A' ? 'left' : 'right';
-      fireConfetti(confettiSide);
+      // Fire confetti from both sides for celebration
+      fireConfetti('both');
     }, 100);
     
     // Save match info for display after match ends
@@ -223,7 +222,6 @@ export const DuelPanel: React.FC = () => {
 
   useEffect(() => {
     setIsTimerRunning(false);
-    setTimerStarted(false);
     setShowAnswer(false);
     setIsSubmitting(false);
     setTeamAAnswer(null);
@@ -238,8 +236,9 @@ export const DuelPanel: React.FC = () => {
     setShowWinnerCelebration(false);
   }, [currentMatch?.id]);
 
-  // Buttons disabled if match completed, no challenge, submitting, OR timer not started yet
-  const disableAnswerButtons = matchCompleted || !hasChallenge || isSubmitting || !timerStarted;
+  // Buttons disabled if match completed, no challenge, or submitting
+  // Note: Timer is optional - buttons work even without starting timer
+  const disableAnswerButtons = matchCompleted || !hasChallenge || isSubmitting;
   const disableActions = matchCompleted || !hasChallenge || isSubmitting;
 
   const handleRandomize = useCallback(async (e: React.MouseEvent) => {
@@ -310,7 +309,6 @@ export const DuelPanel: React.FC = () => {
     e.preventDefault();
     e.stopPropagation();
     setIsTimerRunning(true);
-    setTimerStarted(true);
     playSfx('start');
   }, [playSfx]);
 
@@ -429,10 +427,9 @@ export const DuelPanel: React.FC = () => {
             </div>
             <button
               type="button"
+              disabled={isTransitioning}
               onClick={() => {
-                setShowWinnerCelebration(false);
-                setWinnerCelebrationData(null);
-                setLastActiveMatchId(null);
+                setIsTransitioning(true);
                 
                 // Check if tournament is complete
                 const finalMatch = state?.bracket.find(m => m.id === 'final');
@@ -440,7 +437,10 @@ export const DuelPanel: React.FC = () => {
                 const bothComplete = finalMatch?.status === 'completed' && thirdMatch?.status === 'completed';
                 
                 if (bothComplete) {
-                  navigate('/leaderboard?celebrate=true');
+                  // Small delay before navigating
+                  setTimeout(() => {
+                    navigate('/leaderboard?celebrate=true');
+                  }, 1000);
                   return;
                 }
                 
@@ -450,15 +450,24 @@ export const DuelPanel: React.FC = () => {
                   (m.status === 'pending' || m.status === 'in_progress') &&
                   m.teamA && m.teamB
                 );
-                if (nextMatch) {
-                  startMatch(nextMatch.id).catch(console.error);
-                } else {
-                  navigate('/leaderboard?celebrate=true');
-                }
+                
+                // Add delay before starting next match for better transition
+                setTimeout(() => {
+                  setShowWinnerCelebration(false);
+                  setWinnerCelebrationData(null);
+                  setLastActiveMatchId(null);
+                  setIsTransitioning(false);
+                  
+                  if (nextMatch) {
+                    startMatch(nextMatch.id).catch(console.error);
+                  } else {
+                    navigate('/leaderboard?celebrate=true');
+                  }
+                }, 1500); // 1.5 second delay
               }}
-              className="btn-primary px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl mt-4"
+              className={`btn-primary px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl mt-4 ${isTransitioning ? 'opacity-70' : ''}`}
             >
-              {isTournamentComplete ? 'View Final Standings →' : 'Next Duel →'}
+              {isTransitioning ? 'Loading next duel...' : (isTournamentComplete ? 'View Final Standings →' : 'Next Duel →')}
             </button>
           </div>
         </div>
@@ -719,9 +728,6 @@ export const DuelPanel: React.FC = () => {
                     Wrong
                   </button>
                 </div>
-                {!timerStarted && !matchCompleted && hasChallenge && (
-                  <div className="text-xs text-amber-400/60 italic text-center">Start timer to enable scoring</div>
-                )}
               </div>
               <div className="glass p-6 rounded-xl space-y-4 transition-all hover:bg-white/10">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/50 text-center">{currentMatch.teamB?.name || 'Team B'}</div>
@@ -751,9 +757,6 @@ export const DuelPanel: React.FC = () => {
                     Wrong
                   </button>
                 </div>
-                {!timerStarted && !matchCompleted && hasChallenge && (
-                  <div className="text-xs text-amber-400/60 italic text-center">Start timer to enable scoring</div>
-                )}
               </div>
             </div>
 
