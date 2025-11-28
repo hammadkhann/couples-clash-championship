@@ -41,6 +41,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
 
 @app.get("/health")
+@app.head("/health")
 def health():
     return {"status": "ok"}
 
@@ -59,7 +60,7 @@ if PUBLIC_DIR.exists():
 
 # Catch-all route for SPA - serve index.html for all non-API routes
 if FRONTEND_DIST.exists():
-    @app.get("/{full_path:path}")
+    @app.api_route("/{full_path:path}", methods=["GET", "HEAD"])
     async def serve_spa(full_path: str):
         # Check if file exists in frontend_dist
         file_path = FRONTEND_DIST / full_path

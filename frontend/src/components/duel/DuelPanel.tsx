@@ -11,7 +11,7 @@ type AnnouncementStage = 'semifinal' | 'final' | 'third' | 'champion' | 'tournam
 
 // Confetti celebration function
 const fireConfetti = (side: 'left' | 'right' | 'both') => {
-  const duration = 4000;
+  const duration = 5000;
   const end = Date.now() + duration;
 
   const colors = ['#fbbf24', '#fcd34d', '#d97706', '#ffffff', '#1e3a8a'];
@@ -21,7 +21,7 @@ const fireConfetti = (side: 'left' | 'right' | 'both') => {
 
     if (side === 'left' || side === 'both') {
       confetti({
-        particleCount: 3,
+        particleCount: 4,
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.6 },
@@ -31,7 +31,7 @@ const fireConfetti = (side: 'left' | 'right' | 'both') => {
     }
     if (side === 'right' || side === 'both') {
       confetti({
-        particleCount: 3,
+        particleCount: 4,
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.6 },
@@ -46,7 +46,7 @@ const fireConfetti = (side: 'left' | 'right' | 'both') => {
   // Initial burst
   if (side === 'left' || side === 'both') {
     confetti({
-      particleCount: 100,
+      particleCount: 150,
       angle: 60,
       spread: 80,
       origin: { x: 0, y: 0.7 },
@@ -56,7 +56,7 @@ const fireConfetti = (side: 'left' | 'right' | 'both') => {
   }
   if (side === 'right' || side === 'both') {
     confetti({
-      particleCount: 100,
+      particleCount: 150,
       angle: 120,
       spread: 80,
       origin: { x: 1, y: 0.7 },
@@ -79,6 +79,7 @@ export const DuelPanel: React.FC = () => {
     resetRound,
     nextChallenge,
     overrideScore,
+    startMatch,
   } = useGame();
 
   const [isTimerRunning, setIsTimerRunning] = useState(false);
@@ -499,12 +500,8 @@ export const DuelPanel: React.FC = () => {
                   m.teamA && m.teamB
                 );
                 if (nextMatch) {
-                  // Start the next match
-                  fetch('http://localhost:8000/start-match', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ matchId: nextMatch.id }),
-                  }).catch(console.error);
+                  // Start the next match using context function
+                  startMatch(nextMatch.id).catch(console.error);
                 } else {
                   // No more matches, go to leaderboard
                   navigate('/leaderboard?celebrate=true');
