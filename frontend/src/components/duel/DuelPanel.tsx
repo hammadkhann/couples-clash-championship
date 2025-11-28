@@ -95,6 +95,7 @@ export const DuelPanel: React.FC = () => {
   const [lastCompletedMatch, setLastCompletedMatch] = useState<{ name: string; matchType: string; scoreA: number; scoreB: number } | null>(null);
   const [showTournamentEnd, setShowTournamentEnd] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [pendingNextMatch, setPendingNextMatch] = useState<string | null>(null); // matchId of next match to start
   
   // Track selected answers for each team
   const [teamAAnswer, setTeamAAnswer] = useState<AnswerResult>(null);
@@ -261,6 +262,13 @@ export const DuelPanel: React.FC = () => {
       setTeamBAnswer(prev => prev === result ? null : result);
     }
   }, []);
+
+  // Auto-reveal answer when both teams have submitted their answers
+  useEffect(() => {
+    if (teamAAnswer !== null && teamBAnswer !== null && !showAnswer) {
+      setShowAnswer(true);
+    }
+  }, [teamAAnswer, teamBAnswer, showAnswer]);
 
   // Submit both answers and advance to next question
   const confirmAnswers = useCallback(async () => {
@@ -451,7 +459,7 @@ export const DuelPanel: React.FC = () => {
                   m.teamA && m.teamB
                 );
                 
-                // Add delay before starting next match for better transition
+                // Transition to pre-match screen (don't auto-start)
                 setTimeout(() => {
                   setShowWinnerCelebration(false);
                   setWinnerCelebrationData(null);
@@ -459,7 +467,8 @@ export const DuelPanel: React.FC = () => {
                   setIsTransitioning(false);
                   
                   if (nextMatch) {
-                    startMatch(nextMatch.id).catch(console.error);
+                    // Set pending match to show pre-match screen
+                    setPendingNextMatch(nextMatch.id);
                   } else {
                     navigate('/leaderboard?celebrate=true');
                   }
@@ -473,6 +482,56 @@ export const DuelPanel: React.FC = () => {
         </div>
       </div>
     );
+  }
+
+  // Pre-match screen - show next match teams with Start button
+  if (pendingNextMatch) {
+    const nextMatchData = state?.bracket.find(m => m.id === pendingNextMatch);
+    if (nextMatchData && nextMatchData.teamA && nextMatchData.teamB) {
+      return (
+        <div className="h-full flex flex-col items-center justify-center p-4 md:p-8">
+          <div className="text-center space-y-8 md:space-y-12 animate-fade-in max-w-4xl">
+            <div className="text-2xl md:text-4xl text-white/60 uppercase tracking-widest font-medium">
+              {nextMatchData.label || 'Next Match'}
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+              {/* Team A */}
+              <div className="text-center space-y-3 flex-1">
+                <div className="text-5xl md:text-7xl lg:text-8xl">🔥</div>
+                <div className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white">
+                  {nextMatchData.teamA.name}
+                </div>
+              </div>
+              
+              {/* VS */}
+              <div className="text-4xl md:text-6xl font-display font-black text-gold animate-pulse">
+                VS
+              </div>
+              
+              {/* Team B */}
+              <div className="text-center space-y-3 flex-1">
+                <div className="text-5xl md:text-7xl lg:text-8xl">⚡</div>
+                <div className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white">
+                  {nextMatchData.teamB.name}
+                </div>
+              </div>
+            </div>
+            
+            <button
+              type="button"
+              onClick={() => {
+                setPendingNextMatch(null);
+                startMatch(pendingNextMatch).catch(console.error);
+              }}
+              className="btn-primary px-12 md:px-20 py-4 md:py-6 text-xl md:text-3xl animate-bounce-slow"
+            >
+              🎮 Start Match! 🎮
+            </button>
+          </div>
+        </div>
+      );
+    }
   }
 
   if (!currentMatch) {
