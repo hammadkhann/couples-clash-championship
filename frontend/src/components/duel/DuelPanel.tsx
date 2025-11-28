@@ -100,9 +100,29 @@ export const DuelPanel: React.FC = () => {
   const [teamAAnswer, setTeamAAnswer] = useState<AnswerResult>(null);
   const [teamBAnswer, setTeamBAnswer] = useState<AnswerResult>(null);
   const [timeoutPending, setTimeoutPending] = useState(false);
+  
+  // Track the last active match to detect completions
+  const [lastActiveMatchId, setLastActiveMatchId] = useState<string | null>(null);
 
   const currentMatch = useMemo(() => state?.bracket.find((m) => m.id === state.currentMatchId), [state]);
   const challenge = currentMatch?.currentChallenge;
+
+  // Find the match that just completed (for celebration)
+  const completedMatch = useMemo(() => {
+    if (!state || !lastActiveMatchId) return null;
+    const match = state.bracket.find(m => m.id === lastActiveMatchId);
+    if (match?.status === 'completed' && match.winnerId) {
+      return match;
+    }
+    return null;
+  }, [state, lastActiveMatchId]);
+  
+  // Track when we have an active match
+  useEffect(() => {
+    if (currentMatch?.id && currentMatch.status === 'in_progress') {
+      setLastActiveMatchId(currentMatch.id);
+    }
+  }, [currentMatch?.id, currentMatch?.status]);
 
   const roundsPlayed = currentMatch?.score.currentChallenge ?? 0;
   const bestOf = currentMatch?.score.bestOf ?? 5;
@@ -157,36 +177,49 @@ export const DuelPanel: React.FC = () => {
 
   // Show celebration when match is won
   useEffect(() => {
-    if (!currentMatch) return;
-    if (currentMatch.status !== 'completed') return;
-    if (!currentMatch.winnerId) return;
+    // Use completedMatch which tracks the last active match even after currentMatchId is cleared
+    const matchToCheck = completedMatch || currentMatch;
+    if (!matchToCheck) return;
+    if (matchToCheck.status !== 'completed') return;
+    if (!matchToCheck.winnerId) return;
     if (showWinnerCelebration) return;
     
+    // Determine match type
+    const mType = matchToCheck.id === 'final' ? 'final' : 
+                  matchToCheck.id === 'third' ? 'third' : 
+                  matchToCheck.id.startsWith('sf') ? 'semifinal' : 'match';
+    
     // Determine winner side
-    const side = currentMatch.teamA?.id === currentMatch.winnerId ? 'A' : 'B';
-    const winnerTeamName = side === 'A' ? currentMatch.teamA?.name : currentMatch.teamB?.name;
+    const side = matchToCheck.teamA?.id === matchToCheck.winnerId ? 'A' : 'B';
+    const winnerTeamName = side === 'A' ? matchToCheck.teamA?.name : matchToCheck.teamB?.name;
     const celebrationPayload = {
       name: winnerTeamName || 'Winner',
-      matchType: matchType || 'match',
-      scoreA: currentMatch.score.teamA,
-      scoreB: currentMatch.score.teamB,
+      matchType: mType,
+      scoreA: matchToCheck.score.teamA,
+      scoreB: matchToCheck.score.teamB,
     };
-    setWinnerCelebrationData(celebrationPayload);
-    setShowWinnerCelebration(true);
-    playSfx('win');
+    
+    // Small delay to ensure UI is ready
+    const timer = setTimeout(() => {
+      setWinnerCelebrationData(celebrationPayload);
+      setShowWinnerCelebration(true);
+      playSfx('win');
+      
+      // Fire confetti from winner's side
+      const confettiSide = side === 'A' ? 'left' : 'right';
+      fireConfetti(confettiSide);
+    }, 100);
     
     // Save match info for display after match ends
     setLastCompletedMatch(celebrationPayload);
     
     // For finals, show champion celebration
-    if (matchType === 'final') {
+    if (mType === 'final') {
       setStageAnnouncement('champion');
     }
     
-    // Fire confetti from winner's side
-    const confettiSide = side === 'A' ? 'left' : 'right';
-    fireConfetti(confettiSide);
-  }, [currentMatch?.status, currentMatch?.winnerId, showWinnerCelebration, playSfx, matchType, currentMatch]);
+    return () => clearTimeout(timer);
+  }, [completedMatch, currentMatch, showWinnerCelebration, playSfx]);
 
   useEffect(() => {
     setIsTimerRunning(false);
@@ -373,6 +406,66 @@ export const DuelPanel: React.FC = () => {
     }
   }, [currentMatch, allMatchesComplete, showTournamentEnd, playSfx]);
 
+  // If showing celebration, render it regardless of currentMatch state
+  if (showWinnerCelebration && winnerCelebrationData) {
+    return (
+      <div className="h-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative">
+        {/* Winner Celebration Overlay */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in">
+          <div className="text-center space-y-6 sm:space-y-8 p-8 sm:p-12 animate-scale-in">
+            <div className="text-6xl sm:text-8xl md:text-9xl animate-bounce">
+              {winnerCelebrationData.matchType === 'final' ? '👑' : winnerCelebrationData.matchType === 'third' ? '🥉' : '🏆'}
+            </div>
+            <div className="space-y-4">
+              <div className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-gold animate-pulse">
+                {winnerCelebrationData.matchType === 'final' ? 'CHAMPIONS!' : winnerCelebrationData.matchType === 'third' ? '3RD PLACE!' : 'WINNER!'}
+              </div>
+              <div className="text-4xl sm:text-6xl md:text-7xl font-display font-black text-white">
+                {winnerCelebrationData.name}
+              </div>
+              <div className="text-lg sm:text-2xl text-white/70">
+                Final Score: {winnerCelebrationData.scoreA} - {winnerCelebrationData.scoreB}
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setShowWinnerCelebration(false);
+                setWinnerCelebrationData(null);
+                setLastActiveMatchId(null);
+                
+                // Check if tournament is complete
+                const finalMatch = state?.bracket.find(m => m.id === 'final');
+                const thirdMatch = state?.bracket.find(m => m.id === 'third');
+                const bothComplete = finalMatch?.status === 'completed' && thirdMatch?.status === 'completed';
+                
+                if (bothComplete) {
+                  navigate('/leaderboard?celebrate=true');
+                  return;
+                }
+                
+                // Find next match
+                const nextMatch = state?.bracket.find(m => 
+                  m.id !== completedMatch?.id && 
+                  (m.status === 'pending' || m.status === 'in_progress') &&
+                  m.teamA && m.teamB
+                );
+                if (nextMatch) {
+                  startMatch(nextMatch.id).catch(console.error);
+                } else {
+                  navigate('/leaderboard?celebrate=true');
+                }
+              }}
+              className="btn-primary px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl mt-4"
+            >
+              {isTournamentComplete ? 'View Final Standings →' : 'Next Duel →'}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!currentMatch) {
     // Tournament complete - show grand finale
     if (allMatchesComplete || showTournamentEnd) {
@@ -453,66 +546,6 @@ export const DuelPanel: React.FC = () => {
           teamB={currentMatch?.teamB?.name}
           onComplete={() => setStageAnnouncement(null)}
         />
-      )}
-
-      {/* Winner Celebration Overlay */}
-      {showWinnerCelebration && winnerCelebrationData && !stageAnnouncement && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in">
-          <div className="text-center space-y-6 sm:space-y-8 p-8 sm:p-12 animate-scale-in">
-            <div className="text-6xl sm:text-8xl md:text-9xl animate-bounce">
-              {winnerCelebrationData.matchType === 'final' ? '👑' : winnerCelebrationData.matchType === 'third' ? '🥉' : '🏆'}
-            </div>
-            <div className="space-y-4">
-              <div className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-gold animate-pulse">
-                {winnerCelebrationData.matchType === 'final' ? 'CHAMPIONS!' : winnerCelebrationData.matchType === 'third' ? '3RD PLACE!' : 'WINNER!'}
-              </div>
-              <div className="text-4xl sm:text-6xl md:text-7xl font-display font-black text-white">
-                {winnerCelebrationData.name}
-              </div>
-              <div className="text-lg sm:text-2xl text-white/70">
-                Final Score: {winnerCelebrationData.scoreA} - {winnerCelebrationData.scoreB}
-              </div>
-            </div>
-            <button
-              type="button"
-              onClick={() => {
-                setShowWinnerCelebration(false);
-                setWinnerCelebrationData(null);
-                
-                // Check if tournament is complete after this match
-                if (isTournamentComplete || (matchType === 'final' || matchType === 'third')) {
-                  // Check if both final and 3rd place are done
-                  const finalMatch = state?.bracket.find(m => m.id === 'final');
-                  const thirdMatch = state?.bracket.find(m => m.id === 'third');
-                  const bothComplete = finalMatch?.status === 'completed' && thirdMatch?.status === 'completed';
-                  
-                  if (bothComplete) {
-                    // Tournament is over - go to leaderboard
-                    navigate('/leaderboard?celebrate=true');
-                    return;
-                  }
-                }
-                
-                // Navigate to next match - find next pending/in_progress match
-                const nextMatch = state?.bracket.find(m => 
-                  m.id !== currentMatch?.id && 
-                  (m.status === 'pending' || m.status === 'in_progress') &&
-                  m.teamA && m.teamB
-                );
-                if (nextMatch) {
-                  // Start the next match using context function
-                  startMatch(nextMatch.id).catch(console.error);
-                } else {
-                  // No more matches, go to leaderboard
-                  navigate('/leaderboard?celebrate=true');
-                }
-              }}
-              className="btn-primary px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl mt-4"
-            >
-              {isTournamentComplete ? 'View Final Standings →' : 'Next Duel →'}
-            </button>
-          </div>
-        </div>
       )}
 
       {/* Champion Celebration (separate from regular winner) */}

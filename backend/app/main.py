@@ -49,14 +49,18 @@ def health():
 # Serve frontend static files (must be after API routes)
 if FRONTEND_DIST.exists():
     # Serve static assets (JS, CSS, images, etc.)
-    app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="assets")
+    if (FRONTEND_DIST / "assets").exists():
+        app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="assets")
 
-# Serve public folder assets (sfx, content, etc.)
+# Serve public folder assets (sfx, content, etc.) - only if they have actual files
 if PUBLIC_DIR.exists():
-    if (PUBLIC_DIR / "sfx").exists():
-        app.mount("/sfx", StaticFiles(directory=PUBLIC_DIR / "sfx"), name="sfx")
-    if (PUBLIC_DIR / "content").exists():
-        app.mount("/content", StaticFiles(directory=PUBLIC_DIR / "content"), name="content")
+    sfx_dir = PUBLIC_DIR / "sfx"
+    content_dir = PUBLIC_DIR / "content"
+    # Only mount if directory has actual files (not just .gitkeep)
+    if sfx_dir.exists() and any(f.suffix in ['.mp3', '.wav', '.ogg'] for f in sfx_dir.iterdir() if f.is_file()):
+        app.mount("/sfx", StaticFiles(directory=sfx_dir), name="sfx")
+    if content_dir.exists() and any(f.is_file() and not f.name.startswith('.') for f in content_dir.iterdir()):
+        app.mount("/content", StaticFiles(directory=content_dir), name="content")
 
 # Catch-all route for SPA - serve index.html for all non-API routes
 if FRONTEND_DIST.exists():
