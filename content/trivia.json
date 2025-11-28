@@ -1,0 +1,422 @@
+[
+  {
+    "id": "trivia-1",
+    "theme": "trivia",
+    "prompt": "Who directed the film '3 Idiots'?",
+    "answer": "Rajkumar Hirani"
+  },
+  {
+    "id": "trivia-2",
+    "theme": "trivia",
+    "prompt": "Which actor played Mogambo?",
+    "answer": "Amrish Puri"
+  },
+  {
+    "id": "trivia-3",
+    "theme": "trivia",
+    "prompt": "Which city is 'Rockstar' primarily set in when Jordan becomes famous?",
+    "answer": "Delhi"
+  },
+  {
+    "id": "trivia-4",
+    "theme": "trivia",
+    "prompt": "Finish the dialogue: 'Mere paas ____ hai'",
+    "answer": "maa"
+  },
+  {
+    "id": "trivia-5",
+    "theme": "trivia",
+    "prompt": "Which movie featured the song 'Chaiyya Chaiyya'?",
+    "answer": "Dil Se"
+  },
+  {
+    "id": "trivia-6",
+    "theme": "trivia",
+    "prompt": "Who composed music for 'Dilwale Dulhania Le Jayenge'?",
+    "answer": "Jatin-Lalit"
+  },
+  {
+    "id": "trivia-7",
+    "theme": "trivia",
+    "prompt": "Name the actress who played 'Geet' in 'Jab We Met'",
+    "answer": "Kareena Kapoor"
+  },
+  {
+    "id": "trivia-8",
+    "theme": "trivia",
+    "prompt": "Which film popularized the phrase 'All is well'?",
+    "answer": "3 Idiots"
+  },
+  {
+    "id": "trivia-9",
+    "theme": "trivia",
+    "prompt": "Who played 'Munna Bhai' in 'Munna Bhai M.B.B.S.'?",
+    "answer": "Sanjay Dutt"
+  },
+  {
+    "id": "trivia-10",
+    "theme": "trivia",
+    "prompt": "Which movie is based on the life of mathematician Anand Kumar?",
+    "answer": "Super 30"
+  },
+  {
+    "id": "trivia-11",
+    "theme": "trivia",
+    "prompt": "Which city is the backdrop for 'Queen'?",
+    "answer": "Paris"
+  },
+  {
+    "id": "trivia-12",
+    "theme": "trivia",
+    "prompt": "Who directed 'Gully Boy'?",
+    "answer": "Zoya Akhtar"
+  },
+  {
+    "id": "trivia-13",
+    "theme": "trivia",
+    "prompt": "Which actor is known as the 'Greek God' of Bollywood?",
+    "answer": "Hrithik Roshan"
+  },
+  {
+    "id": "trivia-14",
+    "theme": "trivia",
+    "prompt": "Which film won Best Picture at Filmfare for 2020?",
+    "answer": "Gully Boy"
+  },
+  {
+    "id": "trivia-15",
+    "theme": "trivia",
+    "prompt": "Name the debut film of Alia Bhatt",
+    "answer": "Student of the Year"
+  },
+  {
+    "id": "trivia-16",
+    "theme": "trivia",
+    "prompt": "Who wrote 'Sholay'?",
+    "answer": "Salim-Javed"
+  },
+  {
+    "id": "trivia-17",
+    "theme": "trivia",
+    "prompt": "Which movie has the character Rancho?",
+    "answer": "3 Idiots"
+  },
+  {
+    "id": "trivia-18",
+    "theme": "trivia",
+    "prompt": "Who plays the lead in 'Barfi!'?",
+    "answer": "Ranbir Kapoor"
+  },
+  {
+    "id": "trivia-19",
+    "theme": "trivia",
+    "prompt": "Name the film with the song 'Tum Hi Ho'",
+    "answer": "Aashiqui 2"
+  },
+  {
+    "id": "trivia-20",
+    "theme": "trivia",
+    "prompt": "Which actor is famous for the dialogue 'Pushpa, I hate tears'?",
+    "answer": "Rajesh Khanna"
+  },
+  {
+    "id": "trivia-21",
+    "theme": "trivia",
+    "prompt": "Which film is about dabbawalas and tiffin letters?",
+    "answer": "The Lunchbox"
+  },
+  {
+    "id": "trivia-22",
+    "theme": "trivia",
+    "prompt": "Who played 'Bajirao' opposite Deepika?",
+    "answer": "Ranveer Singh"
+  },
+  {
+    "id": "trivia-23",
+    "theme": "trivia",
+    "prompt": "Which film features the song 'London Thumakda'?",
+    "answer": "Queen"
+  },
+  {
+    "id": "trivia-24",
+    "theme": "trivia",
+    "prompt": "Name the director of 'Dil Chahta Hai'",
+    "answer": "Farhan Akhtar"
+  },
+  {
+    "id": "trivia-25",
+    "theme": "trivia",
+    "prompt": "Which film has Rancho, Farhan, Raju trio?",
+    "answer": "3 Idiots"
+  },
+  {
+    "id": "trivia-26",
+    "theme": "trivia",
+    "prompt": "Who composed 'Kal Ho Naa Ho' title track?",
+    "answer": "Shankar-Ehsaan-Loy"
+  },
+  {
+    "id": "trivia-27",
+    "theme": "trivia",
+    "prompt": "Which actor debuted with 'Ishaqzaade'?",
+    "answer": "Arjun Kapoor"
+  },
+  {
+    "id": "trivia-28",
+    "theme": "trivia",
+    "prompt": "Who played 'Jordan' in Rockstar?",
+    "answer": "Ranbir Kapoor"
+  },
+  {
+    "id": "trivia-29",
+    "theme": "trivia",
+    "prompt": "Name the movie based on Milkha Singh's life",
+    "answer": "Bhaag Milkha Bhaag"
+  },
+  {
+    "id": "trivia-30",
+    "theme": "trivia",
+    "prompt": "Which film introduced 'Baburao Ganpatrao Apte'?",
+    "answer": "Hera Pheri"
+  },
+  {
+    "id": "trivia-31",
+    "theme": "trivia",
+    "prompt": "Who directed 'Taare Zameen Par'?",
+    "answer": "Aamir Khan"
+  },
+  {
+    "id": "trivia-32",
+    "theme": "trivia",
+    "prompt": "Which film is known for the dialogue 'Aal Izz Well'?",
+    "answer": "3 Idiots"
+  },
+  {
+    "id": "trivia-33",
+    "theme": "trivia",
+    "prompt": "Who played 'Piku'?",
+    "answer": "Deepika Padukone"
+  },
+  {
+    "id": "trivia-34",
+    "theme": "trivia",
+    "prompt": "Which film features Geeta and Babita Phogat?",
+    "answer": "Dangal"
+  },
+  {
+    "id": "trivia-35",
+    "theme": "trivia",
+    "prompt": "Name the film with the track 'Galliyan'",
+    "answer": "Ek Villain"
+  },
+  {
+    "id": "trivia-36",
+    "theme": "trivia",
+    "prompt": "Who is known as the 'Khiladi' actor?",
+    "answer": "Akshay Kumar"
+  },
+  {
+    "id": "trivia-37",
+    "theme": "trivia",
+    "prompt": "Which film has the character 'Kabir Singh'?",
+    "answer": "Kabir Singh"
+  },
+  {
+    "id": "trivia-38",
+    "theme": "trivia",
+    "prompt": "Which actress is called 'Desi Girl'?",
+    "answer": "Priyanka Chopra"
+  },
+  {
+    "id": "trivia-39",
+    "theme": "trivia",
+    "prompt": "Which film has a cricket-based plot with a ghost coach?",
+    "answer": "Iqbal"
+  },
+  {
+    "id": "trivia-40",
+    "theme": "trivia",
+    "prompt": "Who directed 'Barfi!'?",
+    "answer": "Anurag Basu"
+  },
+  {
+    "id": "trivia-41",
+    "theme": "trivia",
+    "prompt": "Name the film with the dialogue 'How's the Josh?'",
+    "answer": "Uri: The Surgical Strike"
+  },
+  {
+    "id": "trivia-42",
+    "theme": "trivia",
+    "prompt": "Which film features 'Senorita' song?",
+    "answer": "Zindagi Na Milegi Dobara"
+  },
+  {
+    "id": "trivia-43",
+    "theme": "trivia",
+    "prompt": "Who played 'Circuit'?",
+    "answer": "Arshad Warsi"
+  },
+  {
+    "id": "trivia-44",
+    "theme": "trivia",
+    "prompt": "Which movie is set during the partition and features 'Deewarein'?",
+    "answer": "Gadar"
+  },
+  {
+    "id": "trivia-45",
+    "theme": "trivia",
+    "prompt": "Who composed music for 'Rockstar'?",
+    "answer": "A.R. Rahman"
+  },
+  {
+    "id": "trivia-46",
+    "theme": "trivia",
+    "prompt": "Which film has the song 'Kalank Title Track'?",
+    "answer": "Kalank"
+  },
+  {
+    "id": "trivia-47",
+    "theme": "trivia",
+    "prompt": "Name the director of 'Bajrangi Bhaijaan'",
+    "answer": "Kabir Khan"
+  },
+  {
+    "id": "trivia-48",
+    "theme": "trivia",
+    "prompt": "Which actress stars in 'Queen' as Rani?",
+    "answer": "Kangana Ranaut"
+  },
+  {
+    "id": "trivia-49",
+    "theme": "trivia",
+    "prompt": "Which film features student protests led by Sushant Singh Rajput?",
+    "answer": "Chhichhore"
+  },
+  {
+    "id": "trivia-50",
+    "theme": "trivia",
+    "prompt": "Which movie has the anthem 'Jai Ho'?",
+    "answer": "Slumdog Millionaire"
+  },
+  {
+    "prompt": "Who was the first Indian to win an Oscar?",
+    "answer": "Bhanu Athaiya",
+    "id": "trivia-51",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie is the longest running film in Indian cinema?",
+    "answer": "Dilwale Dulhania Le Jayenge",
+    "id": "trivia-52",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "What is the real name of Akshay Kumar?",
+    "answer": "Rajiv Hari Om Bhatia",
+    "id": "trivia-53",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which Bollywood movie was the first to cross the \u20b9100 crore mark?",
+    "answer": "Ghajini",
+    "id": "trivia-54",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who is known as the 'Tragedy King' of Bollywood?",
+    "answer": "Dilip Kumar",
+    "id": "trivia-55",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie features the song 'Chaiyya Chaiyya'?",
+    "answer": "Dil Se..",
+    "id": "trivia-56",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who directed the movie 'Lagaan'?",
+    "answer": "Ashutosh Gowariker",
+    "id": "trivia-57",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which actor played the role of 'Mogambo'?",
+    "answer": "Amrish Puri",
+    "id": "trivia-58",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "What is the name of the village in 'Sholay'?",
+    "answer": "Ramgarh",
+    "id": "trivia-59",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie was India's first sound film (talkie)?",
+    "answer": "Alam Ara",
+    "id": "trivia-60",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who is the first female superstar of Bollywood?",
+    "answer": "Sridevi",
+    "id": "trivia-61",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie features the character 'Crime Master Gogo'?",
+    "answer": "Andaz Apna Apna",
+    "id": "trivia-62",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "In which movie did Shah Rukh Khan play a villain for the first time?",
+    "answer": "Baazigar",
+    "id": "trivia-63",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which film won the first Filmfare Award for Best Movie?",
+    "answer": "Do Bigha Zamin",
+    "id": "trivia-64",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who composed the music for 'Slumdog Millionaire'?",
+    "answer": "A.R. Rahman",
+    "id": "trivia-65",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which Bollywood actress was crowned Miss World in 1994?",
+    "answer": "Aishwarya Rai",
+    "id": "trivia-66",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "What is the name of the production house owned by Karan Johar?",
+    "answer": "Dharma Productions",
+    "id": "trivia-67",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie is based on the life of Mary Kom?",
+    "answer": "Mary Kom",
+    "id": "trivia-68",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who played the role of 'Circuit' in Munna Bhai series?",
+    "answer": "Arshad Warsi",
+    "id": "trivia-69",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie has the tagline 'It's all about loving your parents'?",
+    "answer": "Kabhi Khushi Kabhie Gham",
+    "id": "trivia-70",
+    "theme": "trivia"
+  }
+]

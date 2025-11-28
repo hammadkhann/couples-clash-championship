@@ -1,0 +1,422 @@
+[
+  {
+    "id": "scene-1",
+    "theme": "scene",
+    "prompt": "Train platform scene where Simran runs and Raj pulls her into the train",
+    "answer": "Dilwale Dulhania Le Jayenge"
+  },
+  {
+    "id": "scene-2",
+    "theme": "scene",
+    "prompt": "Aamir Khan delivers 'All is well' on the college rooftop",
+    "answer": "3 Idiots"
+  },
+  {
+    "id": "scene-3",
+    "theme": "scene",
+    "prompt": "Sanjay Dutt teaches Munna about Gandhi in a classroom",
+    "answer": "Lage Raho Munna Bhai"
+  },
+  {
+    "id": "scene-4",
+    "theme": "scene",
+    "prompt": "Rain-soaked dance on a Mumbai terrace with blue saree",
+    "answer": "Mohra"
+  },
+  {
+    "id": "scene-5",
+    "theme": "scene",
+    "prompt": "The heist confession scene with 'plan perfect hai, execution weak tha'",
+    "answer": "Dhamaal"
+  },
+  {
+    "id": "scene-6",
+    "theme": "scene",
+    "prompt": "Police station where Chulbul Pandey hangs sunglasses on his collar",
+    "answer": "Dabangg"
+  },
+  {
+    "id": "scene-7",
+    "theme": "scene",
+    "prompt": "Dancing in the snow in Switzerland with chiffon saree",
+    "answer": "Dil To Pagal Hai"
+  },
+  {
+    "id": "scene-8",
+    "theme": "scene",
+    "prompt": "Ranbir holds a cocktail glass saying 'Main udna chahta hoon' on the beach",
+    "answer": "Yeh Jawaani Hai Deewani"
+  },
+  {
+    "id": "scene-9",
+    "theme": "scene",
+    "prompt": "Lecture on 'Kuch bhi karne ka' by Professor Virus",
+    "answer": "3 Idiots"
+  },
+  {
+    "id": "scene-10",
+    "theme": "scene",
+    "prompt": "Salman and Madhuri eating kheer in the kitchen after a family bet",
+    "answer": "Hum Aapke Hain Koun..!"
+  },
+  {
+    "id": "scene-11",
+    "theme": "scene",
+    "prompt": "Dance-off in the wedding hall to 'Gallan Goodiyaan'",
+    "answer": "Dil Dhadakne Do"
+  },
+  {
+    "id": "scene-12",
+    "theme": "scene",
+    "prompt": "Interrogation room where Kabir Singh is asked to calm down",
+    "answer": "Kabir Singh"
+  },
+  {
+    "id": "scene-13",
+    "theme": "scene",
+    "prompt": "Ranveer's Alauddin Khilji eating meat and laughing wildly",
+    "answer": "Padmaavat"
+  },
+  {
+    "id": "scene-14",
+    "theme": "scene",
+    "prompt": "Amrita Rao says 'Jal lijiye' with a thali",
+    "answer": "Vivah"
+  },
+  {
+    "id": "scene-15",
+    "theme": "scene",
+    "prompt": "Shah Rukh opening his arms in a mustard field",
+    "answer": "Dilwale Dulhania Le Jayenge"
+  },
+  {
+    "id": "scene-16",
+    "theme": "scene",
+    "prompt": "Climax where Geet is slapped on the train platform",
+    "answer": "Jab We Met"
+  },
+  {
+    "id": "scene-17",
+    "theme": "scene",
+    "prompt": "Bank robbery plan drawing on a chalkboard by Baby gang",
+    "answer": "Dhoom"
+  },
+  {
+    "id": "scene-18",
+    "theme": "scene",
+    "prompt": "Train roof dance to 'Chaiyya Chaiyya'",
+    "answer": "Dil Se"
+  },
+  {
+    "id": "scene-19",
+    "theme": "scene",
+    "prompt": "Ice bucket challenge in the hostel corridor",
+    "answer": "Student of the Year"
+  },
+  {
+    "id": "scene-20",
+    "theme": "scene",
+    "prompt": "Shahid declaring 'Mere paas maa hai' spoof",
+    "answer": "Dilwale (2015)"
+  },
+  {
+    "id": "scene-21",
+    "theme": "scene",
+    "prompt": "Priyanka Chopra dancing in rain to 'Tip Tip Barsa Pani' remake",
+    "answer": "Sooryavanshi"
+  },
+  {
+    "id": "scene-22",
+    "theme": "scene",
+    "prompt": "Hrithik's entry with green eyes and knife in a church",
+    "answer": "Krrish"
+  },
+  {
+    "id": "scene-23",
+    "theme": "scene",
+    "prompt": "Wedding dance 'London Thumakda' with grandmother cheering",
+    "answer": "Queen"
+  },
+  {
+    "id": "scene-24",
+    "theme": "scene",
+    "prompt": "Cliff jump friendship test with Farhan and Imran",
+    "answer": "Zindagi Na Milegi Dobara"
+  },
+  {
+    "id": "scene-25",
+    "theme": "scene",
+    "prompt": "Kite flying competition between SRK and Zayed Khan",
+    "answer": "Main Hoon Na"
+  },
+  {
+    "id": "scene-26",
+    "theme": "scene",
+    "prompt": "Police van flips in slow motion, Ajay Devgn walks out",
+    "answer": "Singham"
+  },
+  {
+    "id": "scene-27",
+    "theme": "scene",
+    "prompt": "Beer riot and horse chase in Spain",
+    "answer": "Zindagi Na Milegi Dobara"
+  },
+  {
+    "id": "scene-28",
+    "theme": "scene",
+    "prompt": "Child painting stars on the wall being scolded",
+    "answer": "Taare Zameen Par"
+  },
+  {
+    "id": "scene-29",
+    "theme": "scene",
+    "prompt": "Anushka throws water on Ranbir's face in auditorium",
+    "answer": "Ae Dil Hai Mushkil"
+  },
+  {
+    "id": "scene-30",
+    "theme": "scene",
+    "prompt": "Elevator breakup confrontation with Alia and Arjun",
+    "answer": "2 States"
+  },
+  {
+    "id": "scene-31",
+    "theme": "scene",
+    "prompt": "Ranveer proposes in the middle of a wrestling ring",
+    "answer": "Sultan"
+  },
+  {
+    "id": "scene-32",
+    "theme": "scene",
+    "prompt": "Teacher tosses a piece of chalk that hits student perfectly",
+    "answer": "Hichki"
+  },
+  {
+    "id": "scene-33",
+    "theme": "scene",
+    "prompt": "Amitabh asks for 'thoda sa room' in a tiny bathroom",
+    "answer": "Piku"
+  },
+  {
+    "id": "scene-34",
+    "theme": "scene",
+    "prompt": "Ranbir and Deepika on a bike in Corsica singing gibberish",
+    "answer": "Tamasha"
+  },
+  {
+    "id": "scene-35",
+    "theme": "scene",
+    "prompt": "Naina removes her specs before the hill trek",
+    "answer": "Yeh Jawaani Hai Deewani"
+  },
+  {
+    "id": "scene-36",
+    "theme": "scene",
+    "prompt": "Pari writes 'Pari' in blood on the wall",
+    "answer": "Pari"
+  },
+  {
+    "id": "scene-37",
+    "theme": "scene",
+    "prompt": "HRX dance-off in a desert with bangles sound",
+    "answer": "Bang Bang"
+  },
+  {
+    "id": "scene-38",
+    "theme": "scene",
+    "prompt": "Kareena dances in a hospital hallway in scrubs",
+    "answer": "Good Newwz"
+  },
+  {
+    "id": "scene-39",
+    "theme": "scene",
+    "prompt": "Anil Kapoor shouts 'Jhakaas' on a film set",
+    "answer": "Welcome"
+  },
+  {
+    "id": "scene-40",
+    "theme": "scene",
+    "prompt": "Dice game deciding land between two kingdoms",
+    "answer": "Jodhaa Akbar"
+  },
+  {
+    "id": "scene-41",
+    "theme": "scene",
+    "prompt": "Salman flies across a bus to save a child",
+    "answer": "Bajrangi Bhaijaan"
+  },
+  {
+    "id": "scene-42",
+    "theme": "scene",
+    "prompt": "Shahid blows a conch shell in slow motion before battle",
+    "answer": "Padmaavat"
+  },
+  {
+    "id": "scene-43",
+    "theme": "scene",
+    "prompt": "Newspaper headline 'Faster than light' about a superhero kid",
+    "answer": "Bhoothnath Returns"
+  },
+  {
+    "id": "scene-44",
+    "theme": "scene",
+    "prompt": "Phone booth proposal prank gone wrong",
+    "answer": "Jaane Tu... Ya Jaane Na"
+  },
+  {
+    "id": "scene-45",
+    "theme": "scene",
+    "prompt": "Varun Dhawan dancing in a wedding horse baraat",
+    "answer": "Humpty Sharma Ki Dulhania"
+  },
+  {
+    "id": "scene-46",
+    "theme": "scene",
+    "prompt": "Kangana rides a scooter alone in Europe",
+    "answer": "Queen"
+  },
+  {
+    "id": "scene-47",
+    "theme": "scene",
+    "prompt": "Remo's dance battle with lasers and smoke",
+    "answer": "ABCD 2"
+  },
+  {
+    "id": "scene-48",
+    "theme": "scene",
+    "prompt": "Courtroom monologue about consent",
+    "answer": "Pink"
+  },
+  {
+    "id": "scene-49",
+    "theme": "scene",
+    "prompt": "Mannequin challenge in a mall music video shoot",
+    "answer": "Aisha"
+  },
+  {
+    "id": "scene-50",
+    "theme": "scene",
+    "prompt": "Slow-motion entry of a red lehenga bride in a palace",
+    "answer": "Kalank"
+  },
+  {
+    "prompt": "Three friends, a road trip to Goa, and a love for fish.",
+    "answer": "Dil Chahta Hai",
+    "id": "scene-51",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A train journey, a missed train, and a girl who talks non-stop.",
+    "answer": "Jab We Met",
+    "id": "scene-52",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A game of cricket to cancel taxes.",
+    "answer": "Lagaan",
+    "id": "scene-53",
+    "theme": "scene"
+  },
+  {
+    "prompt": "Two brothers, a wall, and a mother caught in between.",
+    "answer": "Deewaar",
+    "id": "scene-54",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A man plays a deaf and mute character who loves a girl with autism.",
+    "answer": "Barfi!",
+    "id": "scene-55",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A robot falls in love with his creator's girlfriend and causes havoc.",
+    "answer": "Robot / Enthiran",
+    "id": "scene-56",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A wrestler trains his two daughters to win gold medals.",
+    "answer": "Dangal",
+    "id": "scene-57",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A ghost bride haunts a mansion and dances to classical music.",
+    "answer": "Bhool Bhulaiyaa",
+    "id": "scene-58",
+    "theme": "scene"
+  },
+  {
+    "prompt": "Three friends go on a bachelor trip to Spain and learn to face their fears.",
+    "answer": "Zindagi Na Milegi Dobara",
+    "id": "scene-59",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A man pretends to be a doctor to treat patients with 'Jadoo Ki Jhappi'.",
+    "answer": "Munna Bhai M.B.B.S.",
+    "id": "scene-60",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A police officer with a crooked belt buckle fights corruption.",
+    "answer": "Dabangg",
+    "id": "scene-61",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A man chases a girl to the airport to stop her from leaving, but she's actually leaving for an internship.",
+    "answer": "Jaane Tu... Ya Jaane Na",
+    "id": "scene-62",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A woman plays basketball in a saree.",
+    "answer": "Kuch Kuch Hota Hai",
+    "id": "scene-63",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A man talks to an alien using a remote control.",
+    "answer": "PK",
+    "id": "scene-64",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A thief steals a diamond and jumps off a cliff with a parachute.",
+    "answer": "Dhoom 2",
+    "id": "scene-65",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A simple man travels to Pakistan to reunite a mute girl with her family.",
+    "answer": "Bajrangi Bhaijaan",
+    "id": "scene-66",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A queen commits Jauhar to protect her honor.",
+    "answer": "Padmaavat",
+    "id": "scene-67",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A rockstar destroys his life and career for a broken heart.",
+    "answer": "Rockstar",
+    "id": "scene-68",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A don says 'Don ko pakadna mushkil hi nahi, namumkin hai'.",
+    "answer": "Don",
+    "id": "scene-69",
+    "theme": "scene"
+  },
+  {
+    "prompt": "A man carries his wife on his back because the road is broken.",
+    "answer": "Manjhi: The Mountain Man",
+    "id": "scene-70",
+    "theme": "scene"
+  }
+]

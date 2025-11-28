@@ -1,0 +1,152 @@
+[
+  {
+    "id": "rf-1",
+    "theme": "trivia",
+    "prompt": "Name any Shah Rukh Khan movie with 'Dil' in the title",
+    "answer": "Many possible (Dilwale Dulhania Le Jayenge, Dil Se, etc.)"
+  },
+  {
+    "id": "rf-2",
+    "theme": "trivia",
+    "prompt": "Name any 90s Bollywood romantic song",
+    "answer": "Many possible"
+  },
+  {
+    "id": "rf-3",
+    "theme": "trivia",
+    "prompt": "Name any movie with A.R. Rahman music",
+    "answer": "Many possible"
+  },
+  {
+    "id": "rf-4",
+    "theme": "trivia",
+    "prompt": "Name any film with Aamir Khan in a college",
+    "answer": "3 Idiots, Rang De Basanti (college vibe)"
+  },
+  {
+    "id": "rf-5",
+    "theme": "trivia",
+    "prompt": "Name any iconic Bollywood villain",
+    "answer": "Mogambo, Gabbar, Kancha, etc."
+  },
+  {
+    "prompt": "Name the 3 Khans of Bollywood.",
+    "answer": "Shah Rukh, Salman, Aamir",
+    "id": "rf-6",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie features the character 'Circuit'?",
+    "answer": "Munna Bhai M.B.B.S.",
+    "id": "rf-7",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Finish the dialogue: 'Pushpa, I hate...'",
+    "answer": "Tears",
+    "id": "rf-8",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who is the 'Greek God' of Bollywood?",
+    "answer": "Hrithik Roshan",
+    "id": "rf-9",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie has the song 'Zoobi Doobi'?",
+    "answer": "3 Idiots",
+    "id": "rf-10",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Name the debut movie of Alia Bhatt.",
+    "answer": "Student of the Year",
+    "id": "rf-11",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who played the role of Milkha Singh?",
+    "answer": "Farhan Akhtar",
+    "id": "rf-12",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie is set in the fictional village of Champaner?",
+    "answer": "Lagaan",
+    "id": "rf-13",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "What is the name of the dog in 'Hum Aapke Hain Koun'?",
+    "answer": "Tuffy",
+    "id": "rf-14",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which actor is famous for the 'Dhai kilo ka haath' dialogue?",
+    "answer": "Sunny Deol",
+    "id": "rf-15",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Name the director of 'Dil Chahta Hai'.",
+    "answer": "Farhan Akhtar",
+    "id": "rf-16",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie features the character 'Geet' who loves herself?",
+    "answer": "Jab We Met",
+    "id": "rf-17",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who is 'Bhaijaan' of Bollywood?",
+    "answer": "Salman Khan",
+    "id": "rf-18",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie has the dialogue 'All is Well'?",
+    "answer": "3 Idiots",
+    "id": "rf-19",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Name the female lead in 'Chennai Express'.",
+    "answer": "Deepika Padukone",
+    "id": "rf-20",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie features a match of 'Antakshari' at a wedding?",
+    "answer": "Hum Aapke Hain Koun",
+    "id": "rf-21",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Who sang 'Jai Ho'?",
+    "answer": "A.R. Rahman / Sukhwinder Singh",
+    "id": "rf-22",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie is about a dyslexic child?",
+    "answer": "Taare Zameen Par",
+    "id": "rf-23",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Name the villain in 'Sholay'.",
+    "answer": "Gabbar Singh",
+    "id": "rf-24",
+    "theme": "trivia"
+  },
+  {
+    "prompt": "Which movie features the song 'Kala Chashma'?",
+    "answer": "Baar Baar Dekho",
+    "id": "rf-25",
+    "theme": "trivia"
+  }
+]

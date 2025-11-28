@@ -1,0 +1,422 @@
+[
+  {
+    "id": "lyric-1",
+    "theme": "lyrics",
+    "prompt": "Tujh mein rab dikhta hai, yaar ____",
+    "answer": "main kya karoon"
+  },
+  {
+    "id": "lyric-2",
+    "theme": "lyrics",
+    "prompt": "Kabhi kabhi mere dil mein khayal aata hai ki ____",
+    "answer": "jaise tujhko banaya gaya hai mere liye"
+  },
+  {
+    "id": "lyric-3",
+    "theme": "lyrics",
+    "prompt": "Tere liye hum hai jiye, honton ko ____",
+    "answer": "siye"
+  },
+  {
+    "id": "lyric-4",
+    "theme": "lyrics",
+    "prompt": "Badtameez dil, badtameez dil, badtameez dil ____",
+    "answer": "maane na"
+  },
+  {
+    "id": "lyric-5",
+    "theme": "lyrics",
+    "prompt": "Senorita, bade-bade deshon mein aisi chhoti-chhoti baatein ____",
+    "answer": "hoti rehti hain"
+  },
+  {
+    "id": "lyric-6",
+    "theme": "lyrics",
+    "prompt": "Tum paas aaye, yun muskuraye, tumne na jaane ____",
+    "answer": "kya sapne dikhaye"
+  },
+  {
+    "id": "lyric-7",
+    "theme": "lyrics",
+    "prompt": "Yeh shaam mastani, madhosh kiye jaye, mujhe ____",
+    "answer": "dor koi khinche"
+  },
+  {
+    "id": "lyric-8",
+    "theme": "lyrics",
+    "prompt": "Abhi na jao chhod kar, ke ____",
+    "answer": "dil abhi bhara nahin"
+  },
+  {
+    "id": "lyric-9",
+    "theme": "lyrics",
+    "prompt": "Aankhon mein teri, ajab si ____",
+    "answer": "ajab si adaayein hain"
+  },
+  {
+    "id": "lyric-10",
+    "theme": "lyrics",
+    "prompt": "Kuch kuch hota hai, tum ____",
+    "answer": "nahi samjhoge"
+  },
+  {
+    "id": "lyric-11",
+    "theme": "lyrics",
+    "prompt": "Dil diya hai, jaan bhi denge ____",
+    "answer": "ae watan tere liye"
+  },
+  {
+    "id": "lyric-12",
+    "theme": "lyrics",
+    "prompt": "Kabira maan jaa, kabira maan jaa, aa ____",
+    "answer": "jaa tu kahin"
+  },
+  {
+    "id": "lyric-13",
+    "theme": "lyrics",
+    "prompt": "Pehla nasha, pehla khumaar, naya ____",
+    "answer": "pyaar hai"
+  },
+  {
+    "id": "lyric-14",
+    "theme": "lyrics",
+    "prompt": "Main rang sharbaton ka, tu meethe ghaat ka ____",
+    "answer": "paani"
+  },
+  {
+    "id": "lyric-15",
+    "theme": "lyrics",
+    "prompt": "Chaiyya chaiyya, chaiyya chaiyya, jinke sar ho ____",
+    "answer": "ishq ki chaaon"
+  },
+  {
+    "id": "lyric-16",
+    "theme": "lyrics",
+    "prompt": "Tera hone laga hoon, khone laga hoon ____",
+    "answer": "khud se"
+  },
+  {
+    "id": "lyric-17",
+    "theme": "lyrics",
+    "prompt": "Raabta, raabta, rab se ____",
+    "answer": "mangoon dua"
+  },
+  {
+    "id": "lyric-18",
+    "theme": "lyrics",
+    "prompt": "Dil toh bachcha hai ji, thoda ____",
+    "answer": "kachha hai ji"
+  },
+  {
+    "id": "lyric-19",
+    "theme": "lyrics",
+    "prompt": "Chaand sifarish jo karta hamari deta woh tumko ____",
+    "answer": "bata"
+  },
+  {
+    "id": "lyric-20",
+    "theme": "lyrics",
+    "prompt": "Pal pal pal, pal har pal, har pal har ____",
+    "answer": "lamha saath mein"
+  },
+  {
+    "id": "lyric-21",
+    "theme": "lyrics",
+    "prompt": "Tu hi haqeeqat, khwaab tu, dard bhi ____",
+    "answer": "raahat tu"
+  },
+  {
+    "id": "lyric-22",
+    "theme": "lyrics",
+    "prompt": "Humko humise chura lo, dil mein ____",
+    "answer": "kahin tum chhupa lo"
+  },
+  {
+    "id": "lyric-23",
+    "theme": "lyrics",
+    "prompt": "Suno na sangemarmar ki, yeh ____",
+    "answer": "minaarein"
+  },
+  {
+    "id": "lyric-24",
+    "theme": "lyrics",
+    "prompt": "Afreen afreen, afreen afreen, tujhe dekh ke ____",
+    "answer": "aata hai jeena"
+  },
+  {
+    "id": "lyric-25",
+    "theme": "lyrics",
+    "prompt": "Aye mere humsafar, ek zara ____",
+    "answer": "intezaar"
+  },
+  {
+    "id": "lyric-26",
+    "theme": "lyrics",
+    "prompt": "Chandaniya to barse, cham cham cham, chunariya ____",
+    "answer": "bhige re"
+  },
+  {
+    "id": "lyric-27",
+    "theme": "lyrics",
+    "prompt": "Hum tere bin ab reh nahi sakte, tere bina ____",
+    "answer": "kya wajood mera"
+  },
+  {
+    "id": "lyric-28",
+    "theme": "lyrics",
+    "prompt": "Tu hi meri shab hai, subah hai, tu hi ____",
+    "answer": "din hai mera"
+  },
+  {
+    "id": "lyric-29",
+    "theme": "lyrics",
+    "prompt": "Agar tum saath ho, rohna ____",
+    "answer": "bhi zaroori hai kya"
+  },
+  {
+    "id": "lyric-30",
+    "theme": "lyrics",
+    "prompt": "Kabhi jo baadal barse, main dekhun tujhe ____",
+    "answer": "aankhen bharke"
+  },
+  {
+    "id": "lyric-31",
+    "theme": "lyrics",
+    "prompt": "Ae dil hai mushkil, jeena yahan, zara hatke zara ____",
+    "answer": "bachke"
+  },
+  {
+    "id": "lyric-32",
+    "theme": "lyrics",
+    "prompt": "Gallan goodiyaan, hoya hoya ishqa ____",
+    "answer": "Ishqa"
+  },
+  {
+    "id": "lyric-33",
+    "theme": "lyrics",
+    "prompt": "Apna har din aise jeeyo jaise ____",
+    "answer": "aakhri ho"
+  },
+  {
+    "id": "lyric-34",
+    "theme": "lyrics",
+    "prompt": "Kun faya kun faya kun, faya kun ____",
+    "answer": "faya kun"
+  },
+  {
+    "id": "lyric-35",
+    "theme": "lyrics",
+    "prompt": "Sun saathiya, mahiya, barsaat ke ____",
+    "answer": "din aaye"
+  },
+  {
+    "id": "lyric-36",
+    "theme": "lyrics",
+    "prompt": "Iktara, iktara, dheere dheere ____",
+    "answer": "bole koi"
+  },
+  {
+    "id": "lyric-37",
+    "theme": "lyrics",
+    "prompt": "Saibo, saibo, doll re dhadkan ____",
+    "answer": "mein saibo"
+  },
+  {
+    "id": "lyric-38",
+    "theme": "lyrics",
+    "prompt": "Kabhi jo khushi mili, toh kisi ____",
+    "answer": "guroor mein"
+  },
+  {
+    "id": "lyric-39",
+    "theme": "lyrics",
+    "prompt": "Raabta, hua, mere raabta, hua ____",
+    "answer": "khuda"
+  },
+  {
+    "id": "lyric-40",
+    "theme": "lyrics",
+    "prompt": "Jugnu tu, mera mera jugnu tu, main ____",
+    "answer": "tujhe pukaaroon"
+  },
+  {
+    "id": "lyric-41",
+    "theme": "lyrics",
+    "prompt": "Piya re piya re, jabse ____",
+    "answer": "tumko dekha"
+  },
+  {
+    "id": "lyric-42",
+    "theme": "lyrics",
+    "prompt": "Kali kali zulfon ke phande na ____",
+    "answer": "dalo"
+  },
+  {
+    "id": "lyric-43",
+    "theme": "lyrics",
+    "prompt": "Aaj phir jeene ki, aaj phir ____",
+    "answer": "marne ki tamanna hai"
+  },
+  {
+    "id": "lyric-44",
+    "theme": "lyrics",
+    "prompt": "Yeh haseen vaadiyan, yeh ____",
+    "answer": "khula aasmaan"
+  },
+  {
+    "id": "lyric-45",
+    "theme": "lyrics",
+    "prompt": "Genda phool, ghar mein ____",
+    "answer": "baniya"
+  },
+  {
+    "id": "lyric-46",
+    "theme": "lyrics",
+    "prompt": "Mast magan, mast magan, bas ____",
+    "answer": "tera naam dohraan"
+  },
+  {
+    "id": "lyric-47",
+    "theme": "lyrics",
+    "prompt": "Jaanam dekh lo, mit gaya ____",
+    "answer": "dooriyan"
+  },
+  {
+    "id": "lyric-48",
+    "theme": "lyrics",
+    "prompt": "Mera mann kehne laga, paas aa ____",
+    "answer": "tu mere"
+  },
+  {
+    "id": "lyric-49",
+    "theme": "lyrics",
+    "prompt": "Zara sa jhoom loon main, arey na ____",
+    "answer": "re na"
+  },
+  {
+    "id": "lyric-50",
+    "theme": "lyrics",
+    "prompt": "Chaand taare tod laoon, saari duniya ____",
+    "answer": "pe main chhaa jaaun"
+  },
+  {
+    "prompt": "Tujhe dekha to yeh jaana sanam...",
+    "answer": "Pyaar hota hai deewana sanam",
+    "id": "lyric-51",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Mere khwabon mein jo aaye...",
+    "answer": "Aake mujhe chhed jaaye",
+    "id": "lyric-52",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Bholi si surat, aankhon mein masti...",
+    "answer": "Door khadi sharmaaye",
+    "id": "lyric-53",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Kajra re kajra re...",
+    "answer": "Tere kaare kaare naina",
+    "id": "lyric-54",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Chaiyya Chaiyya...",
+    "answer": "Chal Chaiyya Chaiyya",
+    "id": "lyric-55",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Apna Time Aayega...",
+    "answer": "Tu nanga hi toh aaya hai",
+    "id": "lyric-56",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Baby doll main sone di...",
+    "answer": "Yeh duniya pittal di",
+    "id": "lyric-57",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Ladki beautiful...",
+    "answer": "Kar gayi chull",
+    "id": "lyric-58",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Aunty police bula legi...",
+    "answer": "Par party yunhi chalegi",
+    "id": "lyric-59",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Kesariya tera ishq hai piya...",
+    "answer": "Rang jaaun jo main haath lagaaun",
+    "id": "lyric-60",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Jhoome Jo Pathaan...",
+    "answer": "Meri jaan mehfil hi lut jaaye",
+    "id": "lyric-61",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Naatu Naatu...",
+    "answer": "Naatu Naatu",
+    "id": "lyric-62",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Tum paas aaye, yun muskuraye...",
+    "answer": "Tumne na jaane kya sapne dikhaye",
+    "id": "lyric-63",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Kal ho naa ho...",
+    "answer": "Har ghadi badal rahi hai roop zindagi",
+    "id": "lyric-64",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Senorita...",
+    "answer": "Sun sun suno na sun lo na",
+    "id": "lyric-65",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Chikni Chameli...",
+    "answer": "Chhup ke akeli",
+    "id": "lyric-66",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Sheila ki jawani...",
+    "answer": "I'm just too sexy for you",
+    "id": "lyric-67",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Desi Girl...",
+    "answer": "My Desi Girl",
+    "id": "lyric-68",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "Balam Pichkari...",
+    "answer": "Jo tune mujhe maari",
+    "id": "lyric-69",
+    "theme": "lyrics"
+  },
+  {
+    "prompt": "London Thumakda...",
+    "answer": "Oh balle balle",
+    "id": "lyric-70",
+    "theme": "lyrics"
+  }
+]

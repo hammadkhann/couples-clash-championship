@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal-blue: #1e3a8a;
+  --color-gold: #fbbf24;
+  --color-gold-light: #fcd34d;
+  --color-gold-dark: #d97706;
+  --color-deep-blue: #172554;
+
+  --font-sans: 'Lato', system-ui, sans-serif;
+  --font-display: 'Playfair Display', system-ui, serif;
+
+  --animate-bounce-slow: bounce 3s infinite;
+  --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-scale-in: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-slide-up: slideUp 0.5s ease-out forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.5)); }
+    to { filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.9)); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-deep-blue text-white font-sans min-h-screen overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gold text-deep-blue font-bold rounded-lg shadow-md hover:bg-gold-light hover:shadow-lg hover:-translate-y-0.5 transition-all active:translate-y-0 active:shadow-sm uppercase tracking-widest text-sm cursor-pointer touch-manipulation disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border border-white/30 text-white font-medium rounded-lg hover:bg-white/10 hover:border-white/50 transition-all uppercase tracking-widest text-sm cursor-pointer touch-manipulation disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl rounded-2xl p-6 md:p-8;
+  }
+  
+  .input-field {
+    @apply w-full bg-white/5 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all;
+  }
+}
