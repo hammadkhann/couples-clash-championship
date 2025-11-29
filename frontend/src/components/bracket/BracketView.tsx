@@ -63,8 +63,22 @@ export const BracketView: React.FC = () => {
     const ordered = ['g1', 'g2', 'g3', 'g4', 'group1', 'group2', 'group3', 'group4', 'qf1', 'qf2', 'qf3', 'qf4']
       .map(lookup)
       .filter(Boolean);
-    if (ordered.length) return ordered;
-    return bracket.filter((m) => !m.sourceA && !m.sourceB && m.id !== final?.id && m.id !== thirdPlace?.id);
+    if (ordered.length) {
+      return ordered.map((match) => {
+        if (match?.label?.toLowerCase()?.includes('quarter')) {
+          return { ...match, label: match.label.replace(/quarterfinal/i, 'Group Stage') };
+        }
+        return match;
+      });
+    }
+    return bracket
+      .filter((m) => !m.sourceA && !m.sourceB && m.id !== final?.id && m.id !== thirdPlace?.id)
+      .map((match) => {
+        if (match?.label?.toLowerCase()?.includes('quarter')) {
+          return { ...match, label: match.label.replace(/quarterfinal/i, 'Group Stage') };
+        }
+        return match;
+      });
   })();
   const semis = (() => {
     const byId = ['sf1', 'sf2'].map(lookup).filter(Boolean);

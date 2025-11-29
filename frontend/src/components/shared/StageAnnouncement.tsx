@@ -170,7 +170,7 @@ export const StageAnnouncement: React.FC<StageAnnouncementProps> = ({
   const content = getStageContent();
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-slate-950/85 via-indigo-950/80 to-slate-900/85 backdrop-blur-xl">
       {/* Animated background rays */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vmax] h-[200vmax] animate-spin-slow">
@@ -184,7 +184,7 @@ export const StageAnnouncement: React.FC<StageAnnouncementProps> = ({
         </div>
       </div>
 
-      <div className="relative text-center space-y-8 p-8 max-w-4xl">
+      <div className="relative text-center space-y-8 p-6 sm:p-8 max-w-4xl bg-white/5 border border-white/15 rounded-[2.5rem] shadow-[0_0_80px_rgba(15,23,42,0.8)] backdrop-blur-lg">
         {/* Icon */}
         <div
           className={`text-8xl sm:text-9xl md:text-[12rem] transition-all duration-700 ${

@@ -431,7 +431,7 @@ export const DuelPanel: React.FC = () => {
     return (
       <div className="w-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative">
         {/* Winner Celebration Overlay */}
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-deep-blue/95 backdrop-blur-md animate-fade-in">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-deep-blue/95 backdrop-blur-md animate-fade-in pt-16">
           <div className="text-center space-y-6 sm:space-y-8 p-8 sm:p-12 animate-scale-in">
             <div className="text-6xl sm:text-8xl md:text-9xl animate-bounce">
               {winnerCelebrationData.matchType === 'final' ? '👑' : winnerCelebrationData.matchType === 'third' ? '🥉' : '🏆'}
@@ -611,7 +611,7 @@ export const DuelPanel: React.FC = () => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative">
+    <div className="w-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative min-h-[calc(100vh-10rem)]">
       {/* Stage Announcement Overlay */}
       {stageAnnouncement && stageAnnouncement !== 'champion' && (
         <StageAnnouncement
@@ -633,7 +633,7 @@ export const DuelPanel: React.FC = () => {
         />
       )}
       {/* Score Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-center glass p-4 sm:p-6 rounded-2xl gap-4 sm:gap-8">
+      <div className="w-full flex flex-col sm:flex-row justify-between items-center glass p-4 sm:p-6 rounded-2xl gap-4 sm:gap-8">
         <div className="text-center w-full sm:w-1/3 order-2 sm:order-1">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 truncate tracking-wide">{currentMatch.teamA?.name}</h2>
           <div className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-gold drop-shadow-lg">{currentMatch.score.teamA}</div>
@@ -668,7 +668,7 @@ export const DuelPanel: React.FC = () => {
       </div>
 
       {/* Challenge Area */}
-      <div className="flex-1 min-h-0 panel flex flex-col items-center justify-center relative overflow-visible mt-4">
+      <div className="flex-1 min-h-0 w-full panel flex flex-col items-center justify-center relative overflow-visible mt-4">
         {!challenge ? (
           <div className="text-center space-y-6 sm:space-y-8 z-10 w-full max-w-2xl px-2 animate-fade-in">
             <div className="relative inline-block">
@@ -694,7 +694,7 @@ export const DuelPanel: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full max-w-7xl flex flex-col gap-2 sm:gap-3 md:gap-4 z-10">
+          <div className="w-full flex flex-col gap-3 sm:gap-4 md:gap-6 z-10">
             {/* Theme and Controls Row */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
               <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gold text-deep-blue font-bold rounded-full text-sm sm:text-base uppercase tracking-wider flex items-center gap-2">

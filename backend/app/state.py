@@ -392,18 +392,16 @@ class GameState:
         match.currentChallenge = None
 
     def _check_winner(self, score: MatchScore) -> Optional[str]:
-        target = (score.bestOf // 2) + 1
-        if score.teamA >= target and score.teamA > score.teamB:
-            return "A"
-        if score.teamB >= target and score.teamB > score.teamA:
-            return "B"
-        if score.currentChallenge >= score.bestOf:
-            # Decide by higher score; if tied, continue playing (sudden death)
-            if score.teamA > score.teamB:
-                return "A"
-            if score.teamB > score.teamA:
-                return "B"
+        """Only finish once the scheduled number of rounds have been played."""
+        if score.currentChallenge < score.bestOf:
             return None
+
+        if score.teamA > score.teamB:
+            return "A"
+        if score.teamB > score.teamA:
+            return "B"
+
+        # Play sudden-death overtime until someone pulls ahead.
         return None
 
     def override_score(
