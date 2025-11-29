@@ -109,6 +109,16 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (inProgress) {
       // If a match is already marked as in progress, just point the UI at it without auto-starting anything new
       setState((prev) => (prev ? { ...prev, currentMatchId: inProgress.id } : prev));
+      return;
+    }
+
+    // Fresh start: if nothing has been played yet, auto-start the first pending duel
+    const anyCompleted = state.bracket.some((m) => m.status === 'completed');
+    if (!anyCompleted) {
+      const firstPending = state.bracket.find((m) => m.status === 'pending' && m.teamA && m.teamB);
+      if (firstPending) {
+        startMatch(firstPending.id).catch(() => undefined);
+      }
     }
   }, [state]);
 
