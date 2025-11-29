@@ -57,10 +57,20 @@ export const BracketView: React.FC = () => {
   const { bracket, currentMatchId } = state;
 
   const lookup = (id: string) => bracket.find((m) => m.id === id);
-  const quarters = ['qf1', 'qf2', 'qf3', 'qf4'].map(lookup).filter(Boolean);
-  const semis = ['sf1', 'sf2'].map(lookup).filter(Boolean);
-  const final = lookup('final');
-  const thirdPlace = lookup('third');
+  const final = lookup('final') || bracket.find((m) => m.label?.toLowerCase().includes('final'));
+  const thirdPlace = lookup('third') || bracket.find((m) => m.label?.toLowerCase().includes('third'));
+  const groupStage = (() => {
+    const ordered = ['g1', 'g2', 'g3', 'g4', 'group1', 'group2', 'group3', 'group4', 'qf1', 'qf2', 'qf3', 'qf4']
+      .map(lookup)
+      .filter(Boolean);
+    if (ordered.length) return ordered;
+    return bracket.filter((m) => !m.sourceA && !m.sourceB && m.id !== final?.id && m.id !== thirdPlace?.id);
+  })();
+  const semis = (() => {
+    const byId = ['sf1', 'sf2'].map(lookup).filter(Boolean);
+    if (byId.length) return byId;
+    return bracket.filter((m) => m.label?.toLowerCase().includes('semi') || m.id.toLowerCase().includes('sf'));
+  })();
 
   const handleMatchClick = (matchId: string) => {
     playSfx('start');
@@ -71,11 +81,11 @@ export const BracketView: React.FC = () => {
     <div className="p-2 md:p-4">
       {/* Mobile View - Stacked */}
       <div className="lg:hidden space-y-4">
-        {/* Quarter Finals */}
+        {/* Group Stage */}
         <div className="space-y-2">
-          <h3 className="text-center text-white/50 font-display tracking-widest text-xs uppercase">Quarter Finals</h3>
+          <h3 className="text-center text-white/50 font-display tracking-widest text-xs uppercase">Group Stage</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {quarters.map((match) =>
+            {groupStage.map((match) =>
               match ? (
                 <MatchCard
                   key={match.id}
@@ -138,15 +148,15 @@ export const BracketView: React.FC = () => {
       <div className="hidden lg:flex lg:items-center lg:justify-center mx-auto h-full">
         <div className="flex items-stretch justify-center scale-[0.85] xl:scale-90 2xl:scale-100 origin-center">
           
-          {/* ROUND 1: Quarter Finals */}
+          {/* ROUND 1: Group Stage */}
           <div className="flex flex-col">
-            <h3 className="text-center text-white/50 font-display tracking-widest text-sm mb-4">Quarter Finals</h3>
+            <h3 className="text-center text-white/50 font-display tracking-widest text-sm mb-4">Group Stage</h3>
             
-            {/* Top bracket (QF1 + QF2 → SF1) */}
+            {/* Top bracket (GS1 + GS2 → SF1) */}
             <div className="flex items-center">
-              {/* QF1 & QF2 matches */}
+              {/* GS1 & GS2 matches */}
               <div className="flex flex-col gap-4">
-                {quarters.slice(0, 2).map((match) =>
+                {groupStage.slice(0, 2).map((match) =>
                   match ? (
                     <MatchCard
                       key={match.id}
@@ -158,7 +168,7 @@ export const BracketView: React.FC = () => {
                 )}
               </div>
               
-              {/* Connector: QF1+QF2 → SF1 */}
+              {/* Connector: GS1+GS2 → SF1 */}
               <BracketConnector type="merge" width="w-20" />
               
               {/* SF1 */}
@@ -176,11 +186,11 @@ export const BracketView: React.FC = () => {
             {/* Spacer between top and bottom bracket */}
             <div className="h-12" />
             
-            {/* Bottom bracket (QF3 + QF4 → SF2) */}
+            {/* Bottom bracket (GS3 + GS4 → SF2) */}
             <div className="flex items-center">
-              {/* QF3 & QF4 matches */}
+              {/* GS3 & GS4 matches */}
               <div className="flex flex-col gap-4">
-                {quarters.slice(2, 4).map((match) =>
+                {groupStage.slice(2, 4).map((match) =>
                   match ? (
                     <MatchCard
                       key={match.id}
@@ -192,7 +202,7 @@ export const BracketView: React.FC = () => {
                 )}
               </div>
               
-              {/* Connector: QF3+QF4 → SF2 */}
+              {/* Connector: GS3+GS4 → SF2 */}
               <BracketConnector type="merge" width="w-20" />
               
               {/* SF2 */}

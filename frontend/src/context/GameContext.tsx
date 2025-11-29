@@ -105,14 +105,10 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Auto-select next available match when none active
   useEffect(() => {
     if (!state || state.currentMatchId) return;
-    const next = state.bracket.find((m) => m.status === 'in_progress');
-    if (next) {
-      startMatch(next.id).catch(() => undefined);
-      return;
-    }
-    const pending = state.bracket.find((m) => m.status === 'pending' && m.teamA && m.teamB);
-    if (pending) {
-      startMatch(pending.id).catch(() => undefined);
+    const inProgress = state.bracket.find((m) => m.status === 'in_progress');
+    if (inProgress) {
+      // If a match is already marked as in progress, just point the UI at it without auto-starting anything new
+      setState((prev) => (prev ? { ...prev, currentMatchId: inProgress.id } : prev));
     }
   }, [state]);
 

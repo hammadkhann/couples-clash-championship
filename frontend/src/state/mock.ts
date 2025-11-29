@@ -11,33 +11,36 @@ const teams: Team[] = [
   { id: 't8', name: 'Dua & Amal', players: ['Dua', 'Amal'], score: 0 },
 ];
 
-const createMatch = (id: string, tA: Team | null, tB: Team | null): Match => ({
+const createMatch = (id: string, label: string, tA: Team | null, tB: Team | null, sourceA: string | null = null, sourceB: string | null = null): Match => ({
   id,
+  label,
   teamA: tA,
   teamB: tB,
+  sourceA,
+  sourceB,
   score: { teamA: 0, teamB: 0, bestOf: 5, currentChallenge: 0 },
   status: 'pending',
 });
 
 export const MOCK_STATE: TournamentState = {
   settings: {
-    timers: { lyrics: 20, scene: 25, emoji: 15, trivia: 20 },
+    timers: { lyrics: 10, scene: 15, emoji: 25, trivia: 15 },
     scoring: { perCorrect: 1, winBonus: 2 },
   },
   leaderboard: teams,
   bracket: [
-    // Quarter Finals
-    createMatch('m1', teams[0], teams[1]),
-    createMatch('m2', teams[2], teams[3]),
-    createMatch('m3', teams[4], teams[5]),
-    createMatch('m4', teams[6], teams[7]),
+    // Group Stage
+    createMatch('qf1', 'Group Stage 1', teams[0], teams[1]),
+    createMatch('qf2', 'Group Stage 2', teams[2], teams[3]),
+    createMatch('qf3', 'Group Stage 3', teams[4], teams[5]),
+    createMatch('qf4', 'Group Stage 4', teams[6], teams[7]),
     // Semi Finals
-    createMatch('m5', null, null),
-    createMatch('m6', null, null),
+    createMatch('sf1', 'Semifinal 1', null, null, 'qf1', 'qf2'),
+    createMatch('sf2', 'Semifinal 2', null, null, 'qf3', 'qf4'),
     // Finals
-    createMatch('m7', null, null),
+    createMatch('final', 'Final', null, null, 'sf1', 'sf2'),
     // 3rd Place
-    createMatch('m8', null, null),
+    createMatch('third', 'Third Place', null, null, 'sf1', 'sf2'),
   ],
-  currentMatchId: 'm1',
+  currentMatchId: 'qf1',
 };

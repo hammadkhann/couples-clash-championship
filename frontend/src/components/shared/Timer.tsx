@@ -69,7 +69,7 @@ export const Timer: React.FC<TimerProps> = ({ duration, isRunning, onComplete, o
           cy="96"
           r="88"
           className={clsx(
-            "fill-none transition-all duration-1000 ease-linear",
+            "fill-none transition-all duration-1000 ease-linear drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]",
             ringColor
           )}
           strokeWidth="12"

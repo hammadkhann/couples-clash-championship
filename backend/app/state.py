@@ -9,15 +9,21 @@ from .models import Challenge, Match, MatchScore, Settings, Team, Theme, Tournam
 
 STATE_PATH = Path(__file__).resolve().parents[2] / "state" / "tournament.json"
 
+DEFAULT_TIMERS = {
+    "lyrics": 10,
+    "scene": 15,
+    "emoji": 25,
+    "trivia": 15,
+}
+
 DEFAULT_SETTINGS = Settings(
-    timers={
-        "lyrics": 20,
-        "scene": 25,
-        "emoji": 15,
-        "trivia": 20,
-    },
+    timers=DEFAULT_TIMERS,
     scoring={"perCorrect": 1, "winBonus": 2},
 )
+
+def _fresh_default_teams() -> List[Team]:
+    # Return new Team objects so reset doesn't reuse mutated defaults
+    return [Team(id=t.id, name=t.name, players=list(t.players), score=0) for t in DEFAULT_TEAMS]
 
 DEFAULT_TEAMS = [
     Team(id=str(uuid.uuid4()), name="Manaal & Ahmed", players=["Manaal", "Ahmed"]),
@@ -50,6 +56,8 @@ class GameState:
         saved = self._load()
         if saved:
             self.state = saved
+            self._normalize_bracket_labels()
+            self._normalize_settings()
         else:
             self.state = self._bootstrap(DEFAULT_TEAMS, DEFAULT_SETTINGS)
             self._persist()
@@ -68,16 +76,45 @@ class GameState:
         STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
         STATE_PATH.write_text(self.state.model_dump_json(indent=2))
 
+    def _normalize_bracket_labels(self) -> None:
+        label_map = {
+            "qf1": "Group Stage 1",
+            "qf2": "Group Stage 2",
+            "qf3": "Group Stage 3",
+            "qf4": "Group Stage 4",
+            "sf1": "Semifinal 1",
+            "sf2": "Semifinal 2",
+            "final": "Final",
+            "third": "Third Place",
+        }
+        changed = False
+        for match in self.state.bracket:
+            if match.id in label_map and match.label != label_map[match.id]:
+                match.label = label_map[match.id]
+                changed = True
+        if changed:
+            self._persist()
+
+    def _normalize_settings(self) -> None:
+        changed = False
+        timers = self.state.settings.timers
+        for theme, value in DEFAULT_TIMERS.items():
+            if timers.get(theme) != value:
+                timers[theme] = value
+                changed = True
+        if changed:
+            self._persist()
+
     # setup helpers
     def _bootstrap(self, teams: List[Team], settings: Settings) -> TournamentState:
         if len(teams) < 8:
             raise ValueError("Need at least 8 teams to seed bracket")
         seeded = teams[:8]
         bracket = [
-            _make_match("qf1", "Quarterfinal 1", seeded[0], seeded[1], None, None),
-            _make_match("qf2", "Quarterfinal 2", seeded[2], seeded[3], None, None),
-            _make_match("qf3", "Quarterfinal 3", seeded[4], seeded[5], None, None),
-            _make_match("qf4", "Quarterfinal 4", seeded[6], seeded[7], None, None),
+            _make_match("qf1", "Group Stage 1", seeded[0], seeded[1], None, None),
+            _make_match("qf2", "Group Stage 2", seeded[2], seeded[3], None, None),
+            _make_match("qf3", "Group Stage 3", seeded[4], seeded[5], None, None),
+            _make_match("qf4", "Group Stage 4", seeded[6], seeded[7], None, None),
             _make_match("sf1", "Semifinal 1", None, None, "qf1", "qf2"),
             _make_match("sf2", "Semifinal 2", None, None, "qf3", "qf4"),
             _make_match("final", "Final", None, None, "sf1", "sf2"),
@@ -88,7 +125,7 @@ class GameState:
 
     def reset(self, teams: Optional[List[Team]] = None, settings: Optional[Settings] = None) -> TournamentState:
         new_settings = settings or self.state.settings or DEFAULT_SETTINGS
-        new_teams = teams or DEFAULT_TEAMS
+        new_teams = teams or _fresh_default_teams()
         self.state = self._bootstrap(new_teams, new_settings)
         self._persist()
         return self.state
@@ -131,6 +168,10 @@ class GameState:
             "qf2": ("sf1", "B"),
             "qf3": ("sf2", "A"),
             "qf4": ("sf2", "B"),
+            "g1": ("sf1", "A"),
+            "g2": ("sf1", "B"),
+            "g3": ("sf2", "A"),
+            "g4": ("sf2", "B"),
             "sf1": ("final", "A"),
             "sf2": ("final", "B"),
         }

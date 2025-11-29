@@ -23,7 +23,12 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <div className="text-2xl animate-bounce-slow">🎂</div>
+            <div className="relative">
+              <div className="text-2xl animate-bounce-slow">🎂</div>
+              <div className="absolute -top-2 -right-2 bg-gold text-deep-blue text-[10px] font-bold px-1 rounded-full border border-white/20 shadow-sm">
+                1/2
+              </div>
+            </div>
             <Link to="/" className="font-display font-bold text-lg sm:text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold">
               HALF BIRTHDAY BASH
             </Link>

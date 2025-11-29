@@ -106,6 +106,19 @@ export const DuelPanel: React.FC = () => {
 
   const currentMatch = useMemo(() => state?.bracket.find((m) => m.id === state.currentMatchId), [state]);
   const challenge = currentMatch?.currentChallenge;
+  const timerDuration = useMemo(() => {
+    const defaults: Record<Theme, number> = {
+      lyrics: 10,
+      scene: 15,
+      emoji: 25,
+      trivia: 15,
+    };
+    if (challenge?.theme) {
+      const fromState = state?.settings?.timers?.[challenge.theme];
+      return fromState ?? defaults[challenge.theme];
+    }
+    return defaults.lyrics;
+  }, [challenge?.theme, state?.settings?.timers]);
 
   // Find the match that just completed (for celebration)
   const completedMatch = useMemo(() => {
@@ -233,8 +246,10 @@ export const DuelPanel: React.FC = () => {
 
   // Reset celebration when match changes
   useEffect(() => {
-    setShowWinnerCelebration(false);
-  }, [currentMatch?.id]);
+    if (currentMatch?.status === 'in_progress') {
+      setShowWinnerCelebration(false);
+    }
+  }, [currentMatch?.id, currentMatch?.status]);
 
   // Buttons disabled if match completed, no challenge, or submitting
   // Note: Timer is optional - buttons work even without starting timer
@@ -411,12 +426,12 @@ export const DuelPanel: React.FC = () => {
     }
   }, [currentMatch, allMatchesComplete, showTournamentEnd, playSfx]);
 
-  // If showing celebration, render it regardless of currentMatch state
+    // If showing celebration, render it regardless of currentMatch state
   if (showWinnerCelebration && winnerCelebrationData) {
     return (
-      <div className="h-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative">
+      <div className="w-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative">
         {/* Winner Celebration Overlay */}
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-deep-blue/95 backdrop-blur-md animate-fade-in">
           <div className="text-center space-y-6 sm:space-y-8 p-8 sm:p-12 animate-scale-in">
             <div className="text-6xl sm:text-8xl md:text-9xl animate-bounce">
               {winnerCelebrationData.matchType === 'final' ? '👑' : winnerCelebrationData.matchType === 'third' ? '🥉' : '🏆'}
@@ -473,6 +488,7 @@ export const DuelPanel: React.FC = () => {
       </div>
     );
   }
+
 
   // Pre-match screen - show next match teams with Start button
   if (pendingNextMatch) {
@@ -595,7 +611,7 @@ export const DuelPanel: React.FC = () => {
   }
 
   return (
-    <div className="h-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative">
+    <div className="w-full flex flex-col gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 relative">
       {/* Stage Announcement Overlay */}
       {stageAnnouncement && stageAnnouncement !== 'champion' && (
         <StageAnnouncement
@@ -654,15 +670,26 @@ export const DuelPanel: React.FC = () => {
       {/* Challenge Area */}
       <div className="flex-1 min-h-0 panel flex flex-col items-center justify-center relative overflow-visible mt-4">
         {!challenge ? (
-          <div className="text-center space-y-4 sm:space-y-6 z-10 w-full max-w-2xl px-2">
-            <h3 className="text-lg sm:text-xl md:text-2xl text-white mb-2">Drawing challenge...</h3>
-            <div className="mt-4">
+          <div className="text-center space-y-6 sm:space-y-8 z-10 w-full max-w-2xl px-2 animate-fade-in">
+            <div className="relative inline-block">
+              <div className="text-6xl sm:text-8xl animate-bounce-slow">🎲</div>
+              <div className="absolute -top-2 -right-2 bg-gold text-deep-blue text-xs font-bold px-2 py-0.5 rounded-full border border-white/20 shadow-sm animate-pulse">
+                Ready?
+              </div>
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-2">
+              Next Challenge Awaits!
+            </h3>
+            <p className="text-white/60 text-lg">
+              Spin the wheel to determine the category.
+            </p>
+            <div className="mt-8">
               <button 
                 type="button"
                 onClick={handleRandomize} 
-                className="btn-primary w-full text-base sm:text-lg touch-manipulation"
+                className="btn-primary w-full sm:w-auto px-12 py-4 text-lg sm:text-xl touch-manipulation shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]"
               >
-                🎲 Draw Random Theme
+                🎰 Spin for Theme
               </button>
             </div>
           </div>
@@ -740,7 +767,7 @@ export const DuelPanel: React.FC = () => {
               <div className="flex-shrink-0 order-1 md:order-2">
                 <Timer
                   key={challenge.id}
-                  duration={5}
+                  duration={timerDuration}
                   isRunning={isTimerRunning}
                   onComplete={handleTimeout}
                 />
