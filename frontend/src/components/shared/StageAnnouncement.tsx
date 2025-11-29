@@ -138,7 +138,7 @@ export const StageAnnouncement: React.FC<StageAnnouncementProps> = ({
         return {
           icon: '👑',
           title: 'THE GRAND FINALE',
-          subtitle: 'Couples Clash Showdown',
+          subtitle: 'Couples Clash Championship',
           color: 'from-gold via-gold-light to-gold',
         };
       case 'third':

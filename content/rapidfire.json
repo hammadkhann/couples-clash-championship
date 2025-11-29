@@ -2,149 +2,149 @@
   {
     "id": "rf-1",
     "theme": "trivia",
-    "prompt": "Name any Shah Rukh Khan movie with 'Dil' in the title",
-    "answer": "Many possible (Dilwale Dulhania Le Jayenge, Dil Se, etc.)"
+    "prompt": "In 5 seconds: name ONE Shah Rukh Khan movie with 'Dil' in the title (no repeats allowed)",
+    "answer": "Examples: Dilwale Dulhania Le Jayenge, Dil Se.., Dil To Pagal Hai, Dilwale"
   },
   {
     "id": "rf-2",
     "theme": "trivia",
-    "prompt": "Name any 90s Bollywood romantic song",
-    "answer": "Many possible"
+    "prompt": "Rapid fire: shout ANY one 90s Bollywood romantic song – full title, no humming",
+    "answer": "Examples: Pehla Nasha, Tujhe Dekha To, Tum Paas Aaye, Ek Ladki Ko Dekha"
   },
   {
     "id": "rf-3",
     "theme": "trivia",
-    "prompt": "Name any movie with A.R. Rahman music",
-    "answer": "Many possible"
+    "prompt": "Name ONE A.R. Rahman Hindi film soundtrack that is pure goosebumps",
+    "answer": "Examples: Roja, Dil Se.., Rockstar, Jodhaa Akbar, Rangeela, Lagaan"
   },
   {
     "id": "rf-4",
     "theme": "trivia",
-    "prompt": "Name any film with Aamir Khan in a college",
-    "answer": "3 Idiots, Rang De Basanti (college vibe)"
+    "prompt": "College Aamir only: name ONE Aamir Khan film where he’s in or around college life",
+    "answer": "3 Idiots, Rang De Basanti, Jo Jeeta Wohi Sikandar (college-ish), Dil"
   },
   {
     "id": "rf-5",
     "theme": "trivia",
-    "prompt": "Name any iconic Bollywood villain",
-    "answer": "Mogambo, Gabbar, Kancha, etc."
+    "prompt": "Shout an ICONIC Bollywood villain (bonus if you copy the dialogue)",
+    "answer": "Gabbar Singh, Mogambo, Crime Master Gogo, Kancha Cheena, Langda Tyagi, etc."
   },
   {
-    "prompt": "Name the 3 Khans of Bollywood.",
-    "answer": "Shah Rukh, Salman, Aamir",
+    "prompt": "No thinking: say the 3 mainstream 'Khans of Bollywood' in one breath",
+    "answer": "Shah Rukh Khan, Salman Khan, Aamir Khan",
     "id": "rf-6",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie features the character 'Circuit'?",
+    "prompt": "Name the film where Sanjay Dutt’s bestie is the legend 'Circuit'",
     "answer": "Munna Bhai M.B.B.S.",
     "id": "rf-7",
     "theme": "trivia"
   },
   {
-    "prompt": "Finish the dialogue: 'Pushpa, I hate...'",
+    "prompt": "Finish the drama: 'Pushpa, I hate…' (no hints!)",
     "answer": "Tears",
     "id": "rf-8",
     "theme": "trivia"
   },
   {
-    "prompt": "Who is the 'Greek God' of Bollywood?",
+    "prompt": "In 3 seconds: who is called the 'Greek God' of Bollywood?",
     "answer": "Hrithik Roshan",
     "id": "rf-9",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie has the song 'Zoobi Doobi'?",
+    "prompt": "Name the film with SRK-free but iconic song 'Zoobi Doobi'",
     "answer": "3 Idiots",
     "id": "rf-10",
     "theme": "trivia"
   },
   {
-    "prompt": "Name the debut movie of Alia Bhatt.",
+    "prompt": "Alia Bhatt’s big KJo launch – name the film",
     "answer": "Student of the Year",
     "id": "rf-11",
     "theme": "trivia"
   },
   {
-    "prompt": "Who played the role of Milkha Singh?",
+    "prompt": "Name the actor who ran his heart out as Milkha Singh",
     "answer": "Farhan Akhtar",
     "id": "rf-12",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie is set in the fictional village of Champaner?",
+    "prompt": "British tax, dusty ground, cricket in Champaner – name the film",
     "answer": "Lagaan",
     "id": "rf-13",
     "theme": "trivia"
   },
   {
-    "prompt": "What is the name of the dog in 'Hum Aapke Hain Koun'?",
+    "prompt": "Ultra-fan round: name the white dog in 'Hum Aapke Hain Koun..!'",&
     "answer": "Tuffy",
     "id": "rf-14",
     "theme": "trivia"
   },
   {
-    "prompt": "Which actor is famous for the 'Dhai kilo ka haath' dialogue?",
+    "prompt": "This actor’s hand is 'dhai kilo ka' – name him",
     "answer": "Sunny Deol",
     "id": "rf-15",
     "theme": "trivia"
   },
   {
-    "prompt": "Name the director of 'Dil Chahta Hai'.",
+    "prompt": "Director flex: who directed the vibe-setting classic 'Dil Chahta Hai'?",
     "answer": "Farhan Akhtar",
     "id": "rf-16",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie features the character 'Geet' who loves herself?",
+    "prompt": "Name the film with the iconic chaos queen 'Geet', who keeps saying 'Main apni favourite hoon'",
     "answer": "Jab We Met",
     "id": "rf-17",
     "theme": "trivia"
   },
   {
-    "prompt": "Who is 'Bhaijaan' of Bollywood?",
+    "prompt": "Fan or hater, doesn't matter: who is known as 'Bhaijaan' in Bollywood?",
     "answer": "Salman Khan",
     "id": "rf-18",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie has the dialogue 'All is Well'?",
+    "prompt": "If someone pats their chest and says 'All is Well', which movie are they quoting?",
     "answer": "3 Idiots",
     "id": "rf-19",
     "theme": "trivia"
   },
   {
-    "prompt": "Name the female lead in 'Chennai Express'.",
+    "prompt": "Rapid South-meets-North: name the female lead opposite SRK in 'Chennai Express'",
     "answer": "Deepika Padukone",
     "id": "rf-20",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie features a match of 'Antakshari' at a wedding?",
-    "answer": "Hum Aapke Hain Koun",
+    "prompt": "Shaadi + Antakshari + Madhuri + Salman – name that 90s family mega-film",
+    "answer": "Hum Aapke Hain Koun..!",
     "id": "rf-21",
     "theme": "trivia"
   },
   {
-    "prompt": "Who sang 'Jai Ho'?",
-    "answer": "A.R. Rahman / Sukhwinder Singh",
+    "prompt": "Oscar flex: name ONE singer associated with the song 'Jai Ho'",
+    "answer": "Sukhwinder Singh or A.R. Rahman (composer-singer)",
     "id": "rf-22",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie is about a dyslexic child?",
+    "prompt": "Name the film where Aamir Khan helps a dyslexic child discover his genius through art",
     "answer": "Taare Zameen Par",
     "id": "rf-23",
     "theme": "trivia"
   },
   {
-    "prompt": "Name the villain in 'Sholay'.",
+    "prompt": "Legend-only round: name the dacoit villain of 'Sholay'",
     "answer": "Gabbar Singh",
     "id": "rf-24",
     "theme": "trivia"
   },
   {
-    "prompt": "Which movie features the song 'Kala Chashma'?",
+    "prompt": "Wedding banger alert: 'Kala Chashma' belongs to which movie?",
     "answer": "Baar Baar Dekho",
     "id": "rf-25",
     "theme": "trivia"

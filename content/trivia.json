@@ -2,31 +2,31 @@
   {
     "id": "trivia-1",
     "theme": "trivia",
-    "prompt": "Who directed the film '3 Idiots'?",
+    "prompt": "Film nerd flex: who directed the campus classic '3 Idiots'?",
     "answer": "Rajkumar Hirani"
   },
   {
     "id": "trivia-2",
     "theme": "trivia",
-    "prompt": "Which actor played Mogambo?",
+    "prompt": "Complete the nostalgia: Mogambo khush hua! Which actor played Mogambo?",
     "answer": "Amrish Puri"
   },
   {
     "id": "trivia-3",
     "theme": "trivia",
-    "prompt": "Which city is 'Rockstar' primarily set in when Jordan becomes famous?",
+    "prompt": "When Jordan becomes famous in 'Rockstar', most of the drama shifts to which Indian city?",
     "answer": "Delhi"
   },
   {
     "id": "trivia-4",
     "theme": "trivia",
-    "prompt": "Finish the dialogue: 'Mere paas ____ hai'",
+    "prompt": "Legendary line from 'Deewaar': 'Mere paas ____ hai' – fill in the blank",
     "answer": "maa"
   },
   {
     "id": "trivia-5",
     "theme": "trivia",
-    "prompt": "Which movie featured the song 'Chaiyya Chaiyya'?",
+    "prompt": "Where did the train-top banger 'Chaiyya Chaiyya' originally appear? Name the movie.",
     "answer": "Dil Se"
   },
   {
@@ -44,7 +44,7 @@
   {
     "id": "trivia-8",
     "theme": "trivia",
-    "prompt": "Which film popularized the phrase 'All is well'?",
+    "prompt": "Which film made everyone tap their chest and say 'All is well'?",
     "answer": "3 Idiots"
   },
   {
@@ -56,19 +56,19 @@
   {
     "id": "trivia-10",
     "theme": "trivia",
-    "prompt": "Which movie is based on the life of mathematician Anand Kumar?",
+    "prompt": "Name the film based on real-life math teacher Anand Kumar and his Super 30 batch.",
     "answer": "Super 30"
   },
   {
     "id": "trivia-11",
     "theme": "trivia",
-    "prompt": "Which city is the backdrop for 'Queen'?",
+    "prompt": "In 'Queen', Rani’s solo honeymoon takes her first to which European city?",
     "answer": "Paris"
   },
   {
     "id": "trivia-12",
     "theme": "trivia",
-    "prompt": "Who directed 'Gully Boy'?",
+    "prompt": "Rap fans only: who directed the Mumbai-rap drama 'Gully Boy'?",
     "answer": "Zoya Akhtar"
   },
   {
@@ -80,7 +80,7 @@
   {
     "id": "trivia-14",
     "theme": "trivia",
-    "prompt": "Which film won Best Picture at Filmfare for 2020?",
+    "prompt": "At the 2020 Filmfare Awards, which film took home Best Film (aka Best Picture)?",
     "answer": "Gully Boy"
   },
   {
@@ -98,13 +98,13 @@
   {
     "id": "trivia-17",
     "theme": "trivia",
-    "prompt": "Which movie has the character Rancho?",
+    "prompt": "Rancho, Raju and Farhan are the trio from which blockbuster?",
     "answer": "3 Idiots"
   },
   {
     "id": "trivia-18",
     "theme": "trivia",
-    "prompt": "Who plays the lead in 'Barfi!'?",
+    "prompt": "In 'Barfi!', who plays the mischievous deaf-mute hero?",
     "answer": "Ranbir Kapoor"
   },
   {
@@ -122,7 +122,7 @@
   {
     "id": "trivia-21",
     "theme": "trivia",
-    "prompt": "Which film is about dabbawalas and tiffin letters?",
+    "prompt": "Which film is about a lonely wife and a man bonding through mistaken tiffin deliveries and handwritten notes?",
     "answer": "The Lunchbox"
   },
   {
@@ -140,13 +140,13 @@
   {
     "id": "trivia-24",
     "theme": "trivia",
-    "prompt": "Name the director of 'Dil Chahta Hai'",
+    "prompt": "Name the debut director who gave us 'Dil Chahta Hai' and changed Bollywood bromance forever.",
     "answer": "Farhan Akhtar"
   },
   {
     "id": "trivia-25",
     "theme": "trivia",
-    "prompt": "Which film has Rancho, Farhan, Raju trio?",
+    "prompt": "Which film’s main trio is Rancho, Farhan, and Raju?",
     "answer": "3 Idiots"
   },
   {
@@ -164,7 +164,7 @@
   {
     "id": "trivia-28",
     "theme": "trivia",
-    "prompt": "Who played 'Jordan' in Rockstar?",
+    "prompt": "Name the actor who played Jordan, the self-destructive musician in 'Rockstar'.",
     "answer": "Ranbir Kapoor"
   },
   {
@@ -176,7 +176,7 @@
   {
     "id": "trivia-30",
     "theme": "trivia",
-    "prompt": "Which film introduced 'Baburao Ganpatrao Apte'?",
+    "prompt": "In which cult comedy did we first meet Baburao Ganpatrao Apte?",
     "answer": "Hera Pheri"
   },
   {
@@ -188,7 +188,7 @@
   {
     "id": "trivia-32",
     "theme": "trivia",
-    "prompt": "Which film is known for the dialogue 'Aal Izz Well'?",
+    "prompt": "Fill in the film: the hostel anthem 'Aal Izz Well' comes from which movie?",
     "answer": "3 Idiots"
   },
   {
@@ -200,7 +200,7 @@
   {
     "id": "trivia-34",
     "theme": "trivia",
-    "prompt": "Which film features Geeta and Babita Phogat?",
+    "prompt": "Name the sports drama featuring sisters Geeta and Babita Phogat.",
     "answer": "Dangal"
   },
   {
@@ -218,13 +218,13 @@
   {
     "id": "trivia-37",
     "theme": "trivia",
-    "prompt": "Which film has the character 'Kabir Singh'?",
+    "prompt": "In which controversial film do we meet the angry surgeon Kabir Singh?",
     "answer": "Kabir Singh"
   },
   {
     "id": "trivia-38",
     "theme": "trivia",
-    "prompt": "Which actress is called 'Desi Girl'?",
+    "prompt": "'Desi Girl' from the song and nickname both point to which actress?",
     "answer": "Priyanka Chopra"
   },
   {
@@ -242,7 +242,7 @@
   {
     "id": "trivia-41",
     "theme": "trivia",
-    "prompt": "Name the film with the dialogue 'How's the Josh?'",
+    "prompt": "In which patriotic action film does the line 'How's the Josh?' become a battle cry?",
     "answer": "Uri: The Surgical Strike"
   },
   {

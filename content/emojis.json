@@ -6,12 +6,6 @@
     "answer": "Titanic"
   },
   {
-    "id": "emoji-2",
-    "theme": "emoji",
-    "prompt": "\ud83c\udfc3\u200d\u2642\ufe0f\ud83d\ude82\ud83c\udf3e",
-    "answer": "Dilwale Dulhania Le Jayenge"
-  },
-  {
     "id": "emoji-3",
     "theme": "emoji",
     "prompt": "\ud83d\udc70\ud83e\udd35\ud83d\udc8d\ud83d\udd7a",

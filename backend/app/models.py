@@ -53,3 +53,4 @@ class TournamentState(BaseModel):
     leaderboard: List[Team]
     settings: Settings
     currentMatchId: Optional[str] = None
+    globalUsedChallengeIds: List[str] = Field(default_factory=list)  # Track used challenges across all matches

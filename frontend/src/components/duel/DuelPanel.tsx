@@ -94,7 +94,6 @@ export const DuelPanel: React.FC = () => {
   const [announcedMatches, setAnnouncedMatches] = useState<Set<string>>(new Set());
   const [lastCompletedMatch, setLastCompletedMatch] = useState<{ name: string; matchType: string; scoreA: number; scoreB: number } | null>(null);
   const [showTournamentEnd, setShowTournamentEnd] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [pendingNextMatch, setPendingNextMatch] = useState<string | null>(null); // matchId of next match to start
   
   // Track selected answers for each team
@@ -435,20 +434,14 @@ export const DuelPanel: React.FC = () => {
             </div>
             <button
               type="button"
-              disabled={isTransitioning}
               onClick={() => {
-                setIsTransitioning(true);
-                
                 // Check if tournament is complete
                 const finalMatch = state?.bracket.find(m => m.id === 'final');
                 const thirdMatch = state?.bracket.find(m => m.id === 'third');
                 const bothComplete = finalMatch?.status === 'completed' && thirdMatch?.status === 'completed';
                 
                 if (bothComplete) {
-                  // Small delay before navigating
-                  setTimeout(() => {
-                    navigate('/leaderboard?celebrate=true');
-                  }, 1000);
+                  navigate('/leaderboard?celebrate=true');
                   return;
                 }
                 
@@ -460,23 +453,20 @@ export const DuelPanel: React.FC = () => {
                 );
                 
                 // Transition to pre-match screen (don't auto-start)
-                setTimeout(() => {
-                  setShowWinnerCelebration(false);
-                  setWinnerCelebrationData(null);
-                  setLastActiveMatchId(null);
-                  setIsTransitioning(false);
-                  
-                  if (nextMatch) {
-                    // Set pending match to show pre-match screen
-                    setPendingNextMatch(nextMatch.id);
-                  } else {
-                    navigate('/leaderboard?celebrate=true');
-                  }
-                }, 1500); // 1.5 second delay
+                setShowWinnerCelebration(false);
+                setWinnerCelebrationData(null);
+                setLastActiveMatchId(null);
+                
+                if (nextMatch) {
+                  // Set pending match to show pre-match screen
+                  setPendingNextMatch(nextMatch.id);
+                } else {
+                  navigate('/leaderboard?celebrate=true');
+                }
               }}
-              className={`btn-primary px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl mt-4 ${isTransitioning ? 'opacity-70' : ''}`}
+              className="btn-primary px-8 sm:px-12 py-3 sm:py-4 text-lg sm:text-xl mt-4"
             >
-              {isTransitioning ? 'Loading next duel...' : (isTournamentComplete ? 'View Final Standings →' : 'Next Duel →')}
+              {isTournamentComplete ? 'View Final Standings →' : 'Next Duel →'}
             </button>
           </div>
         </div>

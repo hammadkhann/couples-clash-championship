@@ -22,13 +22,14 @@ interface GameContextType {
 
 export const GameContext = createContext<GameContextType | undefined>(undefined);
 
-// Dynamically determine backend URL based on current host (for network access)
+// Dynamically determine backend URL based on current host
 const getBackendUrl = () => {
-  // In production/Docker, backend serves the frontend, so use same host
   if (typeof window !== 'undefined') {
-    return `${window.location.protocol}//${window.location.host}`;
+    // In production (served by backend) or Vite dev mode (proxied), use same origin
+    // The Vite dev server proxies API requests to the backend
+    return '';
   }
-  return 'http://localhost:8000';
+  return '';
 };
 
 const BACKEND_URL = getBackendUrl();
@@ -52,7 +53,9 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   useEffect(() => {
-    const wsUrl = BACKEND_URL.replace('http', 'ws') + '/ws';
+    // Construct WebSocket URL based on current location
+    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const wsUrl = `${wsProtocol}//${window.location.host}/ws`;
     const ws = new WebSocket(wsUrl);
     socketRef.current = ws;
 

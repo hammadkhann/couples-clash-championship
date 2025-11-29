@@ -15,4 +15,5 @@ COPY content ./content
 COPY public ./public
 COPY --from=frontend /app/frontend/dist ./frontend_dist
 RUN pip install --no-cache-dir "uvicorn[standard]" fastapi pydantic python-multipart
-CMD ["uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use PORT env var for Render, default to 8000 for local
+CMD uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8000}

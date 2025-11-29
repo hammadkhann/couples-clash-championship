@@ -2,7 +2,7 @@
   {
     "id": "lyric-1",
     "theme": "lyrics",
-    "prompt": "Tujh mein rab dikhta hai, yaar ____",
+    "prompt": "Complete this SRK classic: 'Tujh mein rab dikhta hai, yaar ____'",
     "answer": "main kya karoon"
   },
   {
@@ -14,19 +14,19 @@
   {
     "id": "lyric-3",
     "theme": "lyrics",
-    "prompt": "Tere liye hum hai jiye, honton ko ____",
+    "prompt": "Old-school feels: 'Tere liye hum hai jiye, honton ko ____'",
     "answer": "siye"
   },
   {
     "id": "lyric-4",
     "theme": "lyrics",
-    "prompt": "Badtameez dil, badtameez dil, badtameez dil ____",
+    "prompt": "Party hook: 'Badtameez dil, badtameez dil, badtameez dil ____'",
     "answer": "maane na"
   },
   {
     "id": "lyric-5",
     "theme": "lyrics",
-    "prompt": "Senorita, bade-bade deshon mein aisi chhoti-chhoti baatein ____",
+    "prompt": "Foreign waali line: 'Senorita, bade-bade deshon mein aisi chhoti-chhoti baatein ____'",
     "answer": "hoti rehti hain"
   },
   {
@@ -50,13 +50,13 @@
   {
     "id": "lyric-9",
     "theme": "lyrics",
-    "prompt": "Aankhon mein teri, ajab si ____",
+    "prompt": "From 'Om Shanti Om': 'Aankhon mein teri, ajab si ____'",
     "answer": "ajab si adaayein hain"
   },
   {
     "id": "lyric-10",
     "theme": "lyrics",
-    "prompt": "Kuch kuch hota hai, tum ____",
+    "prompt": "90s kids unite: 'Kuch kuch hota hai, tum ____'",
     "answer": "nahi samjhoge"
   },
   {
@@ -74,7 +74,7 @@
   {
     "id": "lyric-13",
     "theme": "lyrics",
-    "prompt": "Pehla nasha, pehla khumaar, naya ____",
+    "prompt": "First crush anthem: 'Pehla nasha, pehla khumaar, naya ____'",
     "answer": "pyaar hai"
   },
   {
@@ -86,7 +86,7 @@
   {
     "id": "lyric-15",
     "theme": "lyrics",
-    "prompt": "Chaiyya chaiyya, chaiyya chaiyya, jinke sar ho ____",
+    "prompt": "Train-top banger: 'Chaiyya chaiyya, chaiyya chaiyya, jinke sar ho ____'",
     "answer": "ishq ki chaaon"
   },
   {
@@ -110,13 +110,13 @@
   {
     "id": "lyric-19",
     "theme": "lyrics",
-    "prompt": "Chaand sifarish jo karta hamari deta woh tumko ____",
+    "prompt": "Romantic line: 'Chaand sifarish jo karta hamari deta woh tumko ____'",
     "answer": "bata"
   },
   {
     "id": "lyric-20",
     "theme": "lyrics",
-    "prompt": "Pal pal pal, pal har pal, har pal har ____",
+    "prompt": "Evergreen love: 'Pal pal pal, pal har pal, har pal har ____'",
     "answer": "lamha saath mein"
   },
   {
@@ -158,7 +158,7 @@
   {
     "id": "lyric-27",
     "theme": "lyrics",
-    "prompt": "Hum tere bin ab reh nahi sakte, tere bina ____",
+    "prompt": "Modern sadboi line: 'Hum tere bin ab reh nahi sakte, tere bina ____'",
     "answer": "kya wajood mera"
   },
   {
@@ -170,7 +170,7 @@
   {
     "id": "lyric-29",
     "theme": "lyrics",
-    "prompt": "Agar tum saath ho, rohna ____",
+    "prompt": "From 'Tamasha': 'Agar tum saath ho, rohna ____'",
     "answer": "bhi zaroori hai kya"
   },
   {

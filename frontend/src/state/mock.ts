@@ -3,7 +3,7 @@ import { TournamentState, Team, Match } from './types';
 const teams: Team[] = [
   { id: 't1', name: 'Manaal & Ahmed', players: ['Manaal', 'Ahmed'], score: 0 },
   { id: 't2', name: 'Samia & Rafay', players: ['Samia', 'Rafay'], score: 0 },
-  { id: 't3', name: 'Shahir & Laiba', players: ['Shahir', 'Laiba'], score: 0 },
+  { id: 't3', name: 'Shahir & Laibah', players: ['Shahir', 'Laibah'], score: 0 },
   { id: 't4', name: 'Rafay & Anum', players: ['Rafay', 'Anum'], score: 0 },
   { id: 't5', name: 'Sadia & Daniyaal', players: ['Sadia', 'Daniyaal'], score: 0 },
   { id: 't6', name: 'Maaz & Misbah', players: ['Maaz', 'Misbah'], score: 0 },

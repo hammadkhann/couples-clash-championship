@@ -22,7 +22,7 @@ DEFAULT_SETTINGS = Settings(
 DEFAULT_TEAMS = [
     Team(id=str(uuid.uuid4()), name="Manaal & Ahmed", players=["Manaal", "Ahmed"]),
     Team(id=str(uuid.uuid4()), name="Samia & Rafay", players=["Samia", "Rafay"]),
-    Team(id=str(uuid.uuid4()), name="Shahir & Laiba", players=["Shahir", "Laiba"]),
+    Team(id=str(uuid.uuid4()), name="Shahir & Laibah", players=["Shahir", "Laibah"]),
     Team(id=str(uuid.uuid4()), name="Rafay & Anum", players=["Rafay", "Anum"]),
     Team(id=str(uuid.uuid4()), name="Sadia & Daniyaal", players=["Sadia", "Daniyaal"]),
     Team(id=str(uuid.uuid4()), name="Maaz & Misbah", players=["Maaz", "Misbah"]),
@@ -166,12 +166,16 @@ class GameState:
 
     def _draw_challenge(self, match: Match, theme: Theme) -> Challenge:
         pool = self.content.get(theme, [])
-        available = [c for c in pool if c.id not in match.usedChallengeIds]
-        selection_pool = available if available else pool
+        # Exclude challenges used globally across all matches in the tournament
+        global_used = set(self.state.globalUsedChallengeIds)
+        available = [c for c in pool if c.id not in global_used]
+        selection_pool = available if available else pool  # Fallback to all if exhausted
         if not selection_pool:
             raise ValueError(f"No challenges available for theme {theme}")
         challenge = random.choice(selection_pool)
+        # Track in both match-level and global lists
         match.usedChallengeIds.append(challenge.id)
+        self.state.globalUsedChallengeIds.append(challenge.id)
         match.currentChallenge = challenge
         match.activeTheme = theme
         return challenge

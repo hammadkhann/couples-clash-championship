@@ -38,7 +38,7 @@ export const Home: React.FC = () => {
             <List size={60} className="md:hidden" />
             <List size={100} className="hidden md:block" />
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-gold mb-1 md:mb-2">Couples Clash Gauntlet</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gold mb-1 md:mb-2">Couples Clash Championship</h3>
           <p className="text-sm md:text-base text-white/60">View the matchups and progress.</p>
         </Link>
 

@@ -57,4 +57,5 @@ export interface TournamentState {
   leaderboard: Team[];
   settings: Settings;
   currentMatchId?: string;
+  globalUsedChallengeIds?: string[];  // Track used challenges across all matches
 }

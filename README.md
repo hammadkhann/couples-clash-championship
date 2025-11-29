@@ -1,17 +1,34 @@
 # Couples Clash Championship
 
-## Run locally (uv + npm)
-- Backend:
-  1) `cd backend`
-  2) `uv venv`
-  3) `source .venv/bin/activate` (or `Scripts\\activate` on Windows)
-  4) `uv pip install fastapi "uvicorn[standard]" pydantic python-multipart`
-  5) `uv run uvicorn app.main:app --reload`
-- Frontend: `cd frontend && npm install && npm run dev`
-- Open http://localhost:5173 (frontend expects backend at http://localhost:8000)
+## Run locally (development)
 
-## Docker
-- `docker-compose up --build`
+### Option 1: Separate processes (recommended for development)
+Run backend and frontend in two terminals:
+
+**Terminal 1 - Backend:**
+```bash
+cd backend
+pip install -e .  # or: pip install fastapi "uvicorn[standard]" pydantic python-multipart
+uvicorn app.main:app --reload --port 8000
+```
+
+**Terminal 2 - Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 - Vite proxies API requests to the backend automatically.
+
+### Option 2: Docker Compose (production-like)
+```bash
+docker-compose up --build
+```
+Open http://localhost:8000
+
+## Deploy on Render
+The app is configured for Render via `render.yaml`. Push to main branch and Render will auto-deploy.
 
 ## Structure
 - `frontend/` Vite React TS app
