@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { clsx } from 'clsx';
 
 interface TimerProps {
@@ -10,6 +10,28 @@ interface TimerProps {
 
 export const Timer: React.FC<TimerProps> = ({ duration, isRunning, onComplete, onTick }) => {
   const [timeLeft, setTimeLeft] = useState(duration);
+  const audioCtxRef = useRef<AudioContext | null>(null);
+
+  const playTick = useCallback(() => {
+    try {
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new AudioContext();
+      }
+      const ctx = audioCtxRef.current;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'square';
+      osc.frequency.value = 1200;
+      const now = ctx.currentTime;
+      gain.gain.setValueAtTime(0.08, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.1);
+    } catch {
+      // Ignore audio errors (e.g., autoplay blocked)
+    }
+  }, []);
 
   useEffect(() => {
     setTimeLeft(duration);
@@ -23,6 +45,9 @@ export const Timer: React.FC<TimerProps> = ({ duration, isRunning, onComplete, o
         setTimeLeft((prev) => {
           const newTime = prev - 1;
           onTick?.(newTime);
+          if (newTime >= 0) {
+            playTick();
+          }
           if (newTime <= 0) {
             clearInterval(interval);
             onComplete?.();
@@ -34,7 +59,7 @@ export const Timer: React.FC<TimerProps> = ({ duration, isRunning, onComplete, o
     }
 
     return () => clearInterval(interval);
-  }, [isRunning, timeLeft, onComplete, onTick]);
+  }, [isRunning, timeLeft, onComplete, onTick, playTick]);
 
   const ratio = duration > 0 ? Math.max(0, Math.min(timeLeft / duration, 1)) : 0;
   const progress = ratio * 100;

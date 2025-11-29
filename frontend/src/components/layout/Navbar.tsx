@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Trophy, Swords, List, Home } from 'lucide-react';
 import { useGame } from '../../hooks/useGame';
+import { BackgroundMusic } from '../shared/BackgroundMusic';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,8 +35,9 @@ export const Navbar: React.FC = () => {
             </Link>
           </div>
           
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:flex items-center gap-3">
+            <BackgroundMusic />
+            <div className="ml-6 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -72,6 +74,9 @@ export const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-deep-blue border-b border-white/10">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="flex justify-end pb-2">
+              <BackgroundMusic />
+            </div>
             {navItems.map((item) => (
               <Link
                 key={item.path}
